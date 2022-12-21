@@ -7,7 +7,9 @@
     >
         <div class="col"><mat-tab-group>
             <mat-tab label="All"> 
-            <app-quiz-card></app-quiz-card>    
+            <app-quiz-card [cardTitle]="'sample title'" 
+            [cardSubTitle]="'Sample subT'" 
+            [cardDescription]="'Sample Body'" ></app-quiz-card>    
             </mat-tab>
             <mat-tab label="Active"> Content 2 </mat-tab>
             <mat-tab label="Previous"> Content 3 </mat-tab>
