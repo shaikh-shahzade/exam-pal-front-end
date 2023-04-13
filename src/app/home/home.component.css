@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+.home-body
+{
+    margin-top: 7px;
+    min-height: 100%;
+    min-width: 100%;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+.home-body .card
+{
+    background: none;
+    color: black;
+    padding-top: 5%;
+    text-align: center;
+    border: unset;
+    align-items: center;
+    justify-self: center;
+    width: 90%;
+    height: 90vh;
+}
+.home-body .card-img-top
+{
+    margin: auto;
+    max-width: 20%;
+    margin-bottom: 2%;
+}
+.home-body h1
+{
+    font-size: 7vw;
+    
+    justify-self: end;
+    font-family: 'Dongle', sans-serif;
+}
+.home-body p
+{
+    
+}
