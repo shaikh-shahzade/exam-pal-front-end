@@ -1,0 +1,40 @@
+.signup-form-page
+{
+    background-color: #FFFBF5;
+    height: 100vh;
+    height: max-content;
+}
+.signup-form-page .form-holder
+{
+    width: 50%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.signup-form-page .form-item
+{
+    margin: 10px 5px 5px 10px;
+    width: 60%;
+}
+.form-button button
+{
+    display: flex;
+    width: 20%;
+    margin: 3%;
+}
+.form-card
+{
+    margin: 5%;;
+}
+@media only screen and (max-width: 1024px) {
+    .signup-form-page .form-holder
+{
+    width: 100%;
+    padding-top: 3%;
+}
+.signup-form-page .form-item
+{
+    margin: 10px 5px 5px 10px;
+    width: 90%;
+}
+} 
+

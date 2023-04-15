@@ -1,1 +1,96 @@
-<p>signup works!</p>
+
+<div class=" signup-form-page">
+<div class="container form-holder">
+    {{ userModel | json }} 
+    <mat-card >
+        <mat-card-content  class="form-card">
+                    
+<form class="example-form"  (ngSubmit)="submitForm(myForm)"  #myForm="ngForm">
+   
+
+
+    <div class="row justify-content-center align-items-center g-2">
+        <mat-form-field class="form-item">
+            <mat-label>Email</mat-label>
+            <input ngModel name="email" type="email" matInput
+                  required email placeholder="Ex. pat@example.com"
+                  #email="ngModel"
+                  >
+            
+            <mat-hint *ngIf="!email.valid && email.touched"> Please enter valid email</mat-hint>
+        </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center align-items-center g-2">
+        <mat-form-field class="form-item">
+            <mat-label>Username</mat-label>
+            <input type="text" ngModel name="username" matInput
+                   required  minlength="5" placeholder="Enter username..."
+                   #username="ngModel">
+                   <mat-hint *ngIf="!username.valid && username.touched&&!username.errors?.['minlength']"> Please enter username </mat-hint>
+                   <mat-hint *ngIf="!username.valid && username.touched&&username.errors?.['minlength']">Username must be greater than 5 characters</mat-hint>
+            
+        </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center align-items-center g-2">
+        <mat-form-field class="form-item">
+            <mat-label>First name</mat-label>
+            <input type="text" ngModel name="firstName" matInput
+            required  minlength="3" placeholder="Emter First name..." #firstName="ngModel">
+            <mat-hint *ngIf="!firstName.valid && firstName.touched&&!firstName.errors?.['minlength']"> Please enter First name </mat-hint>
+                   <mat-hint *ngIf="!firstName.valid && firstName.touched&&firstName.errors?.['minlength']">First name must be greater than 3 characters</mat-hint>
+            
+        </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center align-items-center g-2">
+        <mat-form-field class="form-item">
+            <mat-label>Last name</mat-label>
+            <input type="text" ngModel name="lastName" matInput
+                required  minlength="3" placeholder="Enter last name..." #lastName="ngModel">
+                <mat-hint *ngIf="!lastName.valid && lastName.touched&&!lastName.errors?.['minlength']"> Please enter last name </mat-hint>
+                <mat-hint *ngIf="!lastName.valid && lastName.touched&&lastName.errors?.['minlength']">Last name must be greater than 3 characters</mat-hint>
+                 </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center align-items-center g-2">
+        <mat-form-field class="form-item">
+            <mat-label>password</mat-label>
+            <input type="password" ngModel name="password" matInput
+                required  minlength="6" placeholder="Enter password..." #password="ngModel">
+                <mat-hint *ngIf="!password.valid && password.touched&&!password.errors?.['minlength']"> Please enter Password </mat-hint>
+                <mat-hint *ngIf="!password.valid && password.touched&&password.errors?.['minlength']">Password must be greater than or equal to 6 characters</mat-hint>
+                 </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center align-items-center g-2">
+        <mat-form-field class="form-item">
+            <mat-label>Phone</mat-label>
+            <input type="phone" ngModel name="phone" matInput
+                    required placeholder="Enter Phone..." #phone="ngModel">
+                    <mat-hint *ngIf="!phone.valid && phone.touched"> Please enter phone number </mat-hint>
+                     </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center align-items-center g-2">
+        <mat-form-field class="form-item">
+            <mat-label>Profile Picture</mat-label>
+            <input type="text" ngModel name="profile" matInput
+                   placeholder="Choose picture">
+            
+        </mat-form-field>
+    </div>
+
+    <div class="row form-button justify-content-center align-items-center g-2">
+        <button type="submit" mat-flat-button color="primary">Submit</button>
+        <button mat-flat-button color="warn">Reset</button>
+   
+    </div>
+     </form>
+        </mat-card-content>
+      </mat-card>
+
+</div>
+
+</div>

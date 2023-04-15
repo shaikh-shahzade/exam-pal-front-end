@@ -12,6 +12,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +31,12 @@ import { SignupComponent } from './signup/signup.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    NgbModule
+    NgbModule,
+    MatInputModule,
+    MatCardModule,
+    FormsModule,
+    MatSnackBarModule
+
 
 
     
