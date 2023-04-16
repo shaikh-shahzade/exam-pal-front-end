@@ -1,1 +1,50 @@
-<p>login works!</p>
+<div class="  login-body">
+<div class="container card-body-login">
+           
+    <mat-card class="">
+        <mat-card-content>
+            {{loginDetails | json}}
+            <form (ngSubmit)="submitLogin()" >
+                <div class="row justify-content-center align-items-center g-2">
+     
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter username</mat-label>
+                    <input [(ngModel)]="loginDetails.username" 
+                    name="username"  matInput 
+                    required minlength="5"
+                    placeholder="Username" #usernameRef="ngModel" >
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-hint *ngIf="!usernameRef.valid && usernameRef.touched ">Not Valid Username</mat-hint>
+                  </mat-form-field>
+                  </div>
+
+                  <div class="row justify-content-center align-items-center g-2">
+     
+                  <mat-form-field appearance="outline">
+                    <mat-label>Enter Password</mat-label>
+                    <input [(ngModel)] = "loginDetails.password" 
+                    name="password"
+                     matInput
+                     required minlength="5" placeholder="Password..." #passwordRef="ngModel">
+                    <!-- <mat-icon matSuffix>password</mat-icon> -->
+                    <mat-hint>Hint</mat-hint>
+                  </mat-form-field>
+                  </div>
+
+                  <div class="row justify-content-center align-items-center g-2">
+     
+                  <button type="submit" mat-stroked-button class="login-button"> Login </button>
+                  </div>
+
+            </form>
+            <div class="row justify-content-center align-items-center g-2">
+     
+                <a href="#" class="login-forgot-password"> Forgot password? </a>
+                </div>
+
+        </mat-card-content>
+    </mat-card>
+
+
+</div>
+</div>

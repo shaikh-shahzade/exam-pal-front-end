@@ -16,6 +16,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { LoginService } from './services/login/login.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,13 +39,16 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatInputModule,
     MatCardModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule,
+    SweetAlert2Module
+    
 
 
 
     
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

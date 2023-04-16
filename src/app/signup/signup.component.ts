@@ -27,7 +27,7 @@ export class SignupComponent {
           this.signup.signupCall(this.userModel);
         }
         else{
-          this._snackBar.open("Fields required" , "Close" , {duration:200000  ,panelClass:['snack-bar-green']} );
+          this._snackBar.open("Fields required" , "Close" , {duration:2000  ,panelClass:['snack-bar-green']} );
         }
     }
 
