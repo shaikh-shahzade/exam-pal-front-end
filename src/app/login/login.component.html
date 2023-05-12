@@ -3,7 +3,7 @@
            
     <mat-card class="">
         <mat-card-content>
-            {{loginDetails | json}}
+            
             <form (ngSubmit)="submitLogin()" >
                 <div class="row justify-content-center align-items-center g-2">
      
@@ -14,7 +14,7 @@
                     required minlength="5"
                     placeholder="Username" #usernameRef="ngModel" >
                     <mat-icon matSuffix>person</mat-icon>
-                    <mat-hint *ngIf="!usernameRef.valid && usernameRef.touched ">Not Valid Username</mat-hint>
+                    <mat-hint *ngIf="!usernameRef.valid && usernameRef.touched ">Invalid username</mat-hint>
                   </mat-form-field>
                   </div>
 
@@ -27,7 +27,7 @@
                      matInput
                      required minlength="5" placeholder="Password..." #passwordRef="ngModel">
                     <!-- <mat-icon matSuffix>password</mat-icon> -->
-                    <mat-hint>Hint</mat-hint>
+                    <mat-hint *ngIf="!passwordRef.valid && passwordRef.touched">Invalid password</mat-hint>
                   </mat-form-field>
                   </div>
 
