@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-
+:root
+{
+    --main-red-color:#E74646;
+    --black-heading-color:#333333;
+    --page-background:#ffffff;
+}
 html, body { height: 100%; margin: 0px; padding: 0px; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 

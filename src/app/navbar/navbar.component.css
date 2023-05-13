@@ -1,14 +1,38 @@
+
+.navbar .nav-box
+{
+    margin-top: 17px;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+.nav-brand{
+    color: var(--main-red-color);
+    font-family: 'Dongle', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+}
+.nav-brand .exam-text
+{
+    color: #3B3B3B;
+}
 .navbar-comp
 {
-    background: #3E54AC;
-    color: azure;
+    background: var(--page-background);
+    
 }
-
+.left-navs .active-nav
+{
+    color:var(--main-red-color);
+}
 .left-navs
 {
+    color:#959191;
     max-width: 50%;
     margin-right: 0;
     text-align: end;
+    
    
 }
  .navbar-item
@@ -16,4 +40,18 @@
     transform: scale(1.15);
     margin-right: 1%;
     margin-left: 2%;
+
+    font-family: 'Dongle', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+}
+
+.left-navs .login-button
+{
+    border: 0.8px var(--main-red-color) solid;
+    border-radius: 0%;
+    color: var(--main-red-color);
+    width: 70px;
+    height: 30px;
 }
