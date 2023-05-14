@@ -5,6 +5,7 @@
     --black-heading-color:#333333;
     --page-background:#ffffff;
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 html, body { height: 100%; margin: 0px; padding: 0px; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 

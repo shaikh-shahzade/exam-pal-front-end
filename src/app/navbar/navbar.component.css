@@ -1,17 +1,16 @@
-
-.navbar .nav-box
+:root
 {
-    margin-top: 17px;
-    margin-left: 30px;
-    margin-right: 30px;
+    --nav-link-custom-color: #959191;
 
 }
+
 .nav-brand{
     color: var(--main-red-color);
-    font-family: 'Dongle', sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
 }
 .nav-brand .exam-text
 {
@@ -22,36 +21,54 @@ font-size: 40px;
     background: var(--page-background);
     
 }
+
+
+.navbar 
+{
+    max-width: 90%;
+    margin: auto;
+}
+.left-navs 
+{
+    
+    column-gap: 3vw;
+    row-gap: 10px;
+
+}
+.left-navs .navbar-item 
+{
+    color: #959191 ;
+}
+.left-navs .navbar-item
+{
+    
+    width: fit-content;
+    font-family: 'Poppins', sans-serif;
+   
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
 .left-navs .active-nav
 {
     color:var(--main-red-color);
 }
-.left-navs
-{
-    color:#959191;
-    max-width: 50%;
-    margin-right: 0;
-    text-align: end;
-    
-   
-}
- .navbar-item
-{
-    transform: scale(1.15);
-    margin-right: 1%;
-    margin-left: 2%;
-
-    font-family: 'Dongle', sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-}
-
 .left-navs .login-button
 {
     border: 0.8px var(--main-red-color) solid;
     border-radius: 0%;
     color: var(--main-red-color);
-    width: 70px;
-    height: 30px;
+    width: 118px;
+}
+.container
+{
+
+    border-bottom: 0.53px solid #ECECE8
+}
+@media only screen and (max-width:992px){
+    .navbar .navbar-collapse
+    {
+        margin-top: 20px;
+    }
 }
