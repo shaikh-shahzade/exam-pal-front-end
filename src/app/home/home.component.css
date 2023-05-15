@@ -1,46 +1,6 @@
 
 
-.home-body
-{
-    margin-top: 7px;
-    min-height: 100%;
-    min-width: 100%;
 
-}
-.home-body .card
-{
-    background: none;
-    color: black;
-    padding-top: 5%;
-    text-align: center;
-    border: unset;
-    align-items: center;
-    justify-self: center;
-    width: 90%;
-    height: 90vh;
-}
-.home-body .card-text
-{
-    color: rgb(60, 7, 64);
-    
-}
-.home-body .card-img-top
-{
-    margin: auto;
-    max-width: 20%;
-    margin-bottom: 2%;
-}
-.home-body h1
-{
-    font-size: 7vw;
-    
-    justify-self: end;
-    font-family: 'Dongle', sans-serif;
-}
-.home-body p
-{
-    
-}
 
 .left-line-image
 {
@@ -66,17 +26,33 @@ top: 0;
 right: 0;
 bottom: 0;
 z-index: -1;
-width: 65vh;
+width: 30vw;
 
 height: 100vh;
-background-position: right;
 background-size: cover;
 background-repeat: no-repeat;
+
+}
+@media only screen and (max-width:980px) {
+    
+.right-image
+{
+    
+}
+    
+}
+
+.home-body
+{
+   margin-left: 15vw;
+   margin-top: 10vh;
 
 }
 
 .home-left-side-p1
 {
+    margin: 0%;
+    padding: 0%;
     font-family: 'Roboto';
 font-style: normal;
 font-weight: 500;
@@ -100,11 +76,32 @@ color: #828282;
 {
     
 }
-.home-left-side-p3 .start-but
+.home-left-side-p3 .start-but button
 {
-    
+    border-radius: 0%;
+    background: var(--main-red-color);
+    color: white;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 12.668px;
+line-height: 19px;
+background: #E74646;
+box-shadow: 0px 10px 21.1134px -11px #E74646;
+
 }
-.home-left-side-p3 .know-more
+
+.home-left-side-p3 .know-more button
 {
-    
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12.668px;
+line-height: 15px;
+
+color: var(--main-red-color);
+}
+.home-left-side-p3 .know-more mat-icon
+{
+vertical-align: bottom;
 }
