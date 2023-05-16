@@ -1,17 +1,19 @@
 
 <div class=" signup-form-page">
-<div class="container form-holder">
-    <mat-card >
-        <mat-card-content  class="form-card">
+<div class="container my-4 mx-5 form-holder">
+    <mat-card class="form-card">
+        <mat-card-content  >
                     
 <form class="example-form"  (ngSubmit)="submitForm(myForm)"  #myForm="ngForm">
    
 
-
-    <div class="row justify-content-center align-items-center g-2">
-        <mat-form-field class="form-item">
+    <div class="row text-center signup-heading my-3">
+        <h3>Sign<span style="color: var(--main-red-color);">Up</span></h3>
+    </div>
+    <div class="row form-item g-2 form-item">
+        <mat-form-field class="form-item" appearance="outline">
             <mat-label>Email</mat-label>
-            <input ngModel name="email" type="email" matInput
+            <input ngModel name="email" type="email" matInput 
                   required email placeholder="Ex. pat@example.com"
                   #email="ngModel"
                   >
@@ -21,7 +23,7 @@
     </div>
 
     <div class="row justify-content-center align-items-center g-2">
-        <mat-form-field class="form-item">
+        <mat-form-field class="form-item" appearance="outline">
             <mat-label>Username</mat-label>
             <input type="text" ngModel name="username" matInput
                    required  minlength="5" placeholder="Enter username..."
@@ -33,7 +35,7 @@
     </div>
 
     <div class="row justify-content-center align-items-center g-2">
-        <mat-form-field class="form-item">
+        <mat-form-field class="form-item" appearance="outline">
             <mat-label>First name</mat-label>
             <input type="text" ngModel name="firstName" matInput
             required  minlength="3" placeholder="Emter First name..." #firstName="ngModel">
@@ -44,7 +46,7 @@
     </div>
 
     <div class="row justify-content-center align-items-center g-2">
-        <mat-form-field class="form-item">
+        <mat-form-field class="form-item" appearance="outline">
             <mat-label>Last name</mat-label>
             <input type="text" ngModel name="lastName" matInput
                 required  minlength="3" placeholder="Enter last name..." #lastName="ngModel">
@@ -54,7 +56,7 @@
     </div>
 
     <div class="row justify-content-center align-items-center g-2">
-        <mat-form-field class="form-item">
+        <mat-form-field class="form-item" appearance="outline">
             <mat-label>password</mat-label>
             <input type="password" ngModel name="password" matInput
                 required  minlength="6" placeholder="Enter password..." #password="ngModel">
@@ -64,7 +66,7 @@
     </div>
 
     <div class="row justify-content-center align-items-center g-2">
-        <mat-form-field class="form-item">
+        <mat-form-field class="form-item" appearance="outline">
             <mat-label>Phone</mat-label>
             <input type="phone" ngModel name="phone" matInput
                     required placeholder="Enter Phone..." #phone="ngModel">
@@ -73,7 +75,7 @@
     </div>
 
     <div class="row justify-content-center align-items-center g-2">
-        <mat-form-field class="form-item">
+        <mat-form-field class="form-item" appearance="outline">
             <mat-label>Profile Picture</mat-label>
             <input type="text" ngModel name="profile" matInput
                    placeholder="Choose picture">
@@ -92,4 +94,7 @@
 
 </div>
 
+
+<div class="right-image"
+></div>
 </div>

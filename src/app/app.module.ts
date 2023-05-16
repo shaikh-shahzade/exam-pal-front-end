@@ -19,6 +19,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { LoginService } from './services/login/login.service';
+import { LocalStorageService } from './services/LocalStorage/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { LoginService } from './services/login/login.service';
 
     
   ],
-  providers: [LoginService],
+  providers: [LoginService , LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
