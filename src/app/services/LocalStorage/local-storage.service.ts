@@ -9,7 +9,7 @@ export class LocalStorageService {
   }
   getValue(key:string)
   {
-    localStorage.getItem(key);
+    return  localStorage.getItem(key);
   }
   remove(key: string) {
     localStorage.removeItem(key);

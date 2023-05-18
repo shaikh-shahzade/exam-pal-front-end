@@ -2,20 +2,22 @@
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container nav-box my-2 py-3 mx-auto ">
-      <button mat-button class="navbar-item">
+      <a routerLink="" mat-button class="navbar-item">
         <span class="nav-brand"> <span class="exam-text">Exam</span>Pal </span>
-      </button>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <div class="navbar-nav  left-navs d-flex ">
 
-          <a routerLink="signup" mat-button class=" navbar-item active-nav">How it works?</a>
-          <a routerLink="signup" mat-button class=" navbar-item">Quizes</a>
-          <a routerLink="signup" mat-button class=" navbar-item">About Us</a>
-          <a  routerLink="login" mat-button class=" navbar-item login-button">Login</a>
-        
+          <a routerLink="" mat-button class=" navbar-item active-nav">How it works?</a>
+          <a routerLink="Quizes" mat-button class=" navbar-item">Quizes</a>
+          <a routerLink="aboutus" mat-button class=" navbar-item">About Us</a>
+          <a *ngIf="!userLogin else profile" routerLink="login" mat-button class=" navbar-item login-button">Login</a>
+          <ng-template #profile>
+          <a   routerLink="login" mat-button class=" navbar-item login-button">Profile</a>
+        </ng-template>            
     
 </div>
  
