@@ -20,6 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { LoginService } from './services/login/login.service';
 import { LocalStorageService } from './services/LocalStorage/local-storage.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { LocalStorageService } from './services/LocalStorage/local-storage.servi
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    DashboardComponent,
+    UserDashboardComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
