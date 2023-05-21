@@ -23,6 +23,7 @@ import { LocalStorageService } from './services/LocalStorage/local-storage.servi
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashb
     SignupComponent,
     DashboardComponent,
     UserDashboardComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
