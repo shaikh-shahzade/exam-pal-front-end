@@ -38,6 +38,11 @@ const routes: Routes = [
     path:"quiz",
     component:QuizComponent
   }
+  ,
+  {
+    path:"**",
+    component:HomeComponent
+  }
 ];
 
 @NgModule({
