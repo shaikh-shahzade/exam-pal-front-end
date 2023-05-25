@@ -61,3 +61,20 @@ border-radius: 5px;
     line-height: 19px;
     font-size: 24px;
 }
+
+.right-container
+{
+    font-family: 'Poppins', sans-serif;
+    color:#333333;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+
+}
+.right-container .data-show-cards .col 
+{
+    
+    background-color: #E74646;
+    color: beige;
+}
