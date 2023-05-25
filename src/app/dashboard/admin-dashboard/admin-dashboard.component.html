@@ -1,7 +1,7 @@
 <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Toggle offcanvas</button>
  
 <div class="container">
-    <div class="row justify-content-center align-items-center g-2">
+    <div class="row  g-2">
         <div class="col-3">
            
 <div class="offcanvas-lg offcanvas-start " tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
@@ -9,28 +9,28 @@
     <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-    <div class="container">
-        <div class="row my-4 justify-content-center align-items-center g-2">
+  <div class="offcanvas-body my-left-canvas">
+    <div class="container  mx-3">
+        <div class="row  mt-3 justify-content-center align-items-center g-2">
             <div class="col admin-col"><img [src]="baseUrl+'default.png'"><span>Admin</span></div>
         </div>
-        <div class="row my-4 justify-content-center align-items-center g-2">
-            <div class="col"><hr></div>
+        <div class="row  justify-content-center align-items-center g-2">
+            <div class="col admin-line"><hr></div>
         </div>
-        <div class="row my-4 justify-content-center align-items-center g-2">
-            <div class="col">Column</div>
+        <div class="row my-2  justify-content-center align-items-center g-2">
+            <div class="col"><button mat-button class="active">Create new Quizes</button></div>
         </div>
-        <div class="row my-4 justify-content-center align-items-center g-2">
-            <div class="col">Column</div>
+        <div class="row my-2 justify-content-center align-items-center g-2">
+            <div class="col"><button mat-button>Users</button></div>
         </div>
-        <div class="row my-4 justify-content-center align-items-center g-2">
-            <div class="col">Column</div>
+        <div class="row my-2 justify-content-center align-items-center g-2">
+            <div class="col"><button mat-button>Quizes</button></div>
         </div>
-        <div class="row my-4 justify-content-center align-items-center g-2">
-            <div class="col">Column</div>
+        <div class="row my-2 justify-content-center align-items-center g-2">
+            <div class="col"><button mat-button>Assign exam</button></div>
         </div>
-        <div class="row my-4 justify-content-center align-items-center g-2">
-            <div class="col">Column</div>
+        <div class="row my-2 justify-content-center align-items-center g-2">
+            <div class="col"><button mat-button>Results</button></div>
         </div>
     </div>    
 
@@ -41,7 +41,40 @@
         </div>
         
         
-        <div class="col">Column</div>
+        <div class="col">
+
+            <div class="container">
+                <div class="row justify-content-center align-items-center g-2">
+                    <div class="col">In the last 30days,</div>
+                </div>
+                <div class="row justify-content-center align-items-center g-2">
+                    <div class="col">20 Quizes Created</div>
+                    <div class="col">300 Users Participation</div>
+                    <div class="col">14 Quizes Assigned</div>
+                </div>
+
+                <div class="row py-5 justify-content-center align-items-center g-2">
+                    <div class="col">Activities</div>
+                </div>
+
+                <div class="row justify-content-center align-items-center g-2">
+                    <div class="col">Moniter users , activities , quizes.</div>
+                    <div class="col">
+                        <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                      </form>
+                    </div>
+                    <div class="col"><mat-icon>filter_alt</mat-icon> Filter</div>
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
         
     </div>
 </div>
