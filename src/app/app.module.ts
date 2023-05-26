@@ -24,7 +24,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { QuizComponent } from './quiz/quiz.component';
-
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +50,8 @@ import { QuizComponent } from './quiz/quiz.component';
     FormsModule,
     MatSnackBarModule,
     HttpClientModule,
-    SweetAlert2Module
+    SweetAlert2Module,
+    MatMenuModule
     
 
 

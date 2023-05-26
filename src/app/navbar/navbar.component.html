@@ -15,12 +15,33 @@
           <a routerLink="Quizes" mat-button class=" navbar-item">Quizes</a>
           <a routerLink="aboutus" mat-button class=" navbar-item">About Us</a>
           <a *ngIf="!(userLogin&&userDetails)else profile" routerLink="login" mat-button class=" navbar-item login-button">Login</a>
-          <ng-template #profile>
-          <button   routerLink="login" mat-button class=" navbar-item login-button">
-            <img [src]="baseUrl+ (userDetails.profile||'default.png')">{{userDetails.profile||"default"}}
+          <ng-template #profile >
+            <div class =" navbar-item">
+            <img [src]="baseUrl+ (userDetails.profile||'default.png')" class="profile-navbar-pic">
+          <button mat-button   [matMenuTriggerFor]="menu"    class="  profile-button">
+            {{userDetails.profile||"Shaikh"}}
           </button>
+          </div>
         </ng-template>            
-    
+        
+        <div>
+                  <mat-menu #menu="matMenu"  class="profile-drop-menu">
+                    <div>
+
+          <div mat-menu-item class="py-3">
+            <img [src]="baseUrl+ ('default.png')" class="profile-navbar-pic">
+          
+            Shaikh Shahzade</div>
+          <button mat-menu-item class="text-center">Dashboard</button>
+          <button mat-menu-item>Profile</button>
+          <hr style="  border: 2px solid rgb(231, 229, 229); width: 99%; border-radius: 6%; margin: auto;" />
+          <button  mat-menu-item  style="  border-radius: 2%;"><mat-icon>logout</mat-icon>Logout</button>
+
+        </div>
+        </mat-menu>
+        </div>
+
+        
 </div>
  
 

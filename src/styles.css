@@ -13,3 +13,28 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 {
     color: rebeccapurple!important;
 }
+
+
+#cdk-overlay-0
+{
+    width: max-content;
+}
+
+#cdk-overlay-0 .mat-mdc-menu-panel 
+{
+    border-radius: 5%;
+    background: rgb(248, 246, 246);
+    overflow: hidden;
+    min-width: max-content;
+    padding: 1.5%;
+}
+
+
+#cdk-overlay-0 .mat-mdc-menu-panel .mat-mdc-menu-content
+{
+    border-radius: 5%;
+    width: max-content;
+ 
+    font-size: smaller;
+    background: #ffffff;
+}
