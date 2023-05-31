@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { CreateQuizComponent } from './dashboard/admin-dashboard/create-quiz/create-quiz.component';
+import { ProfilePageComponent } from './dashboard/admin-dashboard/profile-page/profile-page.component';
 
 const routes: Routes = [
   {
@@ -31,7 +33,17 @@ const routes: Routes = [
     },
   {
     path:"admin",
-    component:AdminDashboardComponent
+    component:AdminDashboardComponent,
+    children:[
+    {
+      path:"create",
+      component:CreateQuizComponent
+    },
+    {
+      path:"profile",
+      component:ProfilePageComponent
+    }
+  ]
   }]
   },
   {

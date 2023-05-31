@@ -25,6 +25,12 @@ import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboar
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { QuizComponent } from './quiz/quiz.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from "@angular/material/datepicker"
+import {MatNativeDateModule} from '@angular/material/core';
+import { CreateQuizComponent } from './dashboard/admin-dashboard/create-quiz/create-quiz.component';
+import { ProfilePageComponent } from './dashboard/admin-dashboard/profile-page/profile-page.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +41,9 @@ import {MatMenuModule} from '@angular/material/menu';
     DashboardComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
-    QuizComponent
+    QuizComponent,
+    CreateQuizComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,11 @@ import {MatMenuModule} from '@angular/material/menu';
     MatSnackBarModule,
     HttpClientModule,
     SweetAlert2Module,
-    MatMenuModule
+    MatMenuModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule
     
 
 

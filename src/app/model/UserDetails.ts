@@ -11,6 +11,8 @@ export class UserDetails
     profile: string;
     accountNonExpired: boolean;
     credentialsNonExpired: boolean;
-    authorities: [];
+    authorities: [{
+        authority:string;
+    }];
     accountNonLocked: boolean;
 }
