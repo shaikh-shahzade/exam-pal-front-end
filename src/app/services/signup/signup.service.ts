@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { User } from 'src/app/Models/user-model.model';
+import { User } from 'src/app/model/user-model.model';
 import { AppConstants } from 'src/app/uitility/constants-helper';
 import Swal from 'sweetalert2';
 

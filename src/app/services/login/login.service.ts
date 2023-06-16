@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { LoginUser } from "src/app/Models/login-model.model";
+import { LoginUser } from "src/app/model/login-model.model";
 import { AppConstants } from "src/app/uitility/constants-helper";
 import { LocalStorageService } from "../LocalStorage/local-storage.service";
 import { loginResponse } from "src/app/model/login-response";
