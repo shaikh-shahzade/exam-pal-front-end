@@ -6,10 +6,12 @@ export class Quiz
     qid:Number
     active:Boolean
     description:string
-    max_marks:Number
-    max_time:Number
-    no_of_questions:Number
+    maxMarks:Number
+    maxTime:Number
+    noOfQuestions:Number
     title:string
     category:Category
     user:User
+    lastDate:Date
+    startDate:Date
 }

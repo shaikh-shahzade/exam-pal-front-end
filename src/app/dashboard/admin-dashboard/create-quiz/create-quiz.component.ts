@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Quiz } from 'src/app/model/quiz.model';
 
 @Component({
   selector: 'app-create-quiz',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
 })
 export class CreateQuizComponent {
 
+  quiz:Quiz = new Quiz;
+
+  createQuiz()
+  {
+    console.log(this.quiz);
+  }
   
 }
