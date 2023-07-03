@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Quiz } from 'src/app/model/quiz.model';
+import { QuizService } from 'src/app/services/quiz/quiz.service';
 
 @Component({
   selector: 'app-create-quiz',
@@ -10,9 +11,14 @@ export class CreateQuizComponent {
 
   quiz:Quiz = new Quiz;
 
+  constructor(private quizService:QuizService)
+  {
+
+  }
   createQuiz()
   {
-    console.log(this.quiz);
+    this.quizService.createNewQuiz(this.quiz);
+    
   }
   
 }
