@@ -19,7 +19,7 @@
             <div class =" navbar-item">
             <img [src]="baseUrl+ (userDetails.profile||'default.png')" class="profile-navbar-pic">
           <button mat-button   [matMenuTriggerFor]="menu"    class="  profile-button">
-            {{userDetails.profile||"Shaikh"}}
+            {{userDetails.firstName||"Shaikh"}}
           </button>
           </div>
         </ng-template>            

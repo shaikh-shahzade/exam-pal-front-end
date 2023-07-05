@@ -6,15 +6,22 @@ import { LocalStorageService } from "../LocalStorage/local-storage.service";
 import { loginResponse } from "src/app/model/login-response";
 import { UserDetails } from "src/app/model/UserDetails";
 import { Observable, Subject } from "rxjs";
+import { SwalModule } from "@sweetalert2/ngx-sweetalert2/lib/sweetalert2-loader.service";
+import Swal from "sweetalert2";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Injectable()
 export class LoginService
 {
-     userDetails!:UserDetails ;
+    userDetails!:UserDetails ;
+    isLoggedIn:Boolean;
     loggedIn : Subject<UserDetails> = new Subject<UserDetails>();
-    constructor(private http:HttpClient ,private localStorage:LocalStorageService)
+    constructor(private http:HttpClient ,
+        private localStorage:LocalStorageService,
+        private _snackbar:MatSnackBar
+        )
     {
-        
+        this.isLoggedIn=false;
         
     }
     login(loginDetails:LoginUser)
@@ -26,11 +33,18 @@ export class LoginService
                     this.localStorage.setValue("user",JSON.stringify(body.userDetails));
                     this.userDetails = body.userDetails;
                     this.loggedIn.next(this.userDetails);
+                    this.isLoggedIn=true;
                 }
-            
-            
+                ,
+                (error)=>{
+                    this.isLoggedIn=false;
+                    this._snackbar.open("Unable to sign in","Close",{duration:1000});
+                    //Swal.fire("Error","Not defined");
+                    //alert("Login PRoblem");
+                }
+                
+                        
         )
-        
     }
 
 
