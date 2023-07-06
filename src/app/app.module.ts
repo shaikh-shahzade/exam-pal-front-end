@@ -31,6 +31,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { CreateQuizComponent } from './dashboard/admin-dashboard/create-quiz/create-quiz.component';
 import { ProfilePageComponent } from './dashboard/admin-dashboard/profile-page/profile-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ShowUsersComponent } from './dashboard/admin-dashboard/show-users/show-users.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AdminDashboardComponent,
     QuizComponent,
     CreateQuizComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    ShowUsersComponent
   ],
   imports: [
     BrowserModule,
