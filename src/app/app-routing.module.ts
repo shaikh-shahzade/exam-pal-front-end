@@ -10,6 +10,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { CreateQuizComponent } from './dashboard/admin-dashboard/create-quiz/create-quiz.component';
 import { ProfilePageComponent } from './dashboard/admin-dashboard/profile-page/profile-page.component';
 import { ShowUsersComponent } from './dashboard/admin-dashboard/show-users/show-users.component';
+import { ManageQuizesComponent } from './dashboard/admin-dashboard/manage-quizes/manage-quizes.component';
 
 const routes: Routes = [
   {
@@ -47,8 +48,11 @@ const routes: Routes = [
     {
       path:"users",
       component:ShowUsersComponent
+    },
+    {
+      path:"quizes",
+      component:ManageQuizesComponent
     }
-
   ]
   }]
   },

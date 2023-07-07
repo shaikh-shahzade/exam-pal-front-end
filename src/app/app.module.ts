@@ -32,6 +32,7 @@ import { CreateQuizComponent } from './dashboard/admin-dashboard/create-quiz/cre
 import { ProfilePageComponent } from './dashboard/admin-dashboard/profile-page/profile-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ShowUsersComponent } from './dashboard/admin-dashboard/show-users/show-users.component';
+import { ManageQuizesComponent } from './dashboard/admin-dashboard/manage-quizes/manage-quizes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { ShowUsersComponent } from './dashboard/admin-dashboard/show-users/show-
     QuizComponent,
     CreateQuizComponent,
     ProfilePageComponent,
-    ShowUsersComponent
+    ShowUsersComponent,
+    ManageQuizesComponent
   ],
   imports: [
     BrowserModule,
