@@ -9,6 +9,7 @@ import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashb
 import { QuizComponent } from './quiz/quiz.component';
 import { CreateQuizComponent } from './dashboard/admin-dashboard/create-quiz/create-quiz.component';
 import { ProfilePageComponent } from './dashboard/admin-dashboard/profile-page/profile-page.component';
+import { ShowUsersComponent } from './dashboard/admin-dashboard/show-users/show-users.component';
 
 const routes: Routes = [
   {
@@ -42,7 +43,12 @@ const routes: Routes = [
     {
       path:"profile",
       component:ProfilePageComponent
+    },
+    {
+      path:"users",
+      component:ShowUsersComponent
     }
+
   ]
   }]
   },
