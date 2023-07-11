@@ -11,6 +11,7 @@ import { CreateQuizComponent } from './dashboard/admin-dashboard/create-quiz/cre
 import { ProfilePageComponent } from './dashboard/admin-dashboard/profile-page/profile-page.component';
 import { ShowUsersComponent } from './dashboard/admin-dashboard/show-users/show-users.component';
 import { ManageQuizesComponent } from './dashboard/admin-dashboard/manage-quizes/manage-quizes.component';
+import { AssignExamsComponent } from './dashboard/admin-dashboard/assign-exams/assign-exams.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,10 @@ const routes: Routes = [
     {
       path:"quizes",
       component:ManageQuizesComponent
+    },
+    {
+      path:"assign",
+      component:AssignExamsComponent
     }
   ]
   }]
