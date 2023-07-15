@@ -12,6 +12,7 @@ import { ProfilePageComponent } from './dashboard/admin-dashboard/profile-page/p
 import { ShowUsersComponent } from './dashboard/admin-dashboard/show-users/show-users.component';
 import { ManageQuizesComponent } from './dashboard/admin-dashboard/manage-quizes/manage-quizes.component';
 import { AssignExamsComponent } from './dashboard/admin-dashboard/assign-exams/assign-exams.component';
+import { ResultsComponent } from './dashboard/admin-dashboard/results/results.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,10 @@ const routes: Routes = [
     {
       path:"assign",
       component:AssignExamsComponent
+    },
+    {
+      path:"results",
+      component:ResultsComponent
     }
   ]
   }]
