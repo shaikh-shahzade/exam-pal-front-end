@@ -13,7 +13,9 @@ export class QuizService {
   createNewQuiz(quiz:Quiz)
   {
     
-    this.httpClient.post(AppConstants.BASE_URL+"quiz" , quiz)
-    .subscribe((val)=>{console.log(val);});
+    this.httpClient.post<Quiz>(AppConstants.BASE_URL+"quiz" , quiz)
+    .subscribe((val)=>{
+      if(val)
+      console.log(val);});
   }
 }

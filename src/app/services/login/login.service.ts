@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpBackend, HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { LoginUser } from "src/app/model/login-model.model";
 import { AppConstants } from "src/app/uitility/constants-helper";
@@ -15,21 +15,26 @@ export class LoginService
 {
     userDetails!:UserDetails ;
     isLoggedIn:Boolean;
+    loginToken:string;
     loggedIn : Subject<UserDetails> = new Subject<UserDetails>();
-    constructor(private http:HttpClient ,
+    httpClient:HttpClient;
+    constructor(private httpBackend: HttpBackend ,
         private localStorage:LocalStorageService,
         private _snackbar:MatSnackBar
         )
     {
         this.isLoggedIn=false;
+        this.httpClient = new HttpClient(httpBackend);
         
     }
+    
     login(loginDetails:LoginUser)
     {   
-        this.http.post<loginResponse>(AppConstants.BASE_URL+"auth/generate" , loginDetails)
+        this.httpClient.post<loginResponse>(AppConstants.BASE_URL+"auth/generate" , loginDetails)
         .subscribe(
             (body) =>{
-                    this.localStorage.setValue("token" , `Bearer ${body.token}`);
+                    this.loginToken = `Bearer ${body.token}` ; 
+                    this.localStorage.setValue("token" , this.loginToken);
                     this.localStorage.setValue("user",JSON.stringify(body.userDetails));
                     this.userDetails = body.userDetails;
                     this.loggedIn.next(this.userDetails);

@@ -16,7 +16,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { LoginService } from './services/login/login.service';
 import { LocalStorageService } from './services/LocalStorage/local-storage.service';
@@ -35,6 +35,9 @@ import { ShowUsersComponent } from './dashboard/admin-dashboard/show-users/show-
 import { ManageQuizesComponent } from './dashboard/admin-dashboard/manage-quizes/manage-quizes.component';
 import { AssignExamsComponent } from './dashboard/admin-dashboard/assign-exams/assign-exams.component';
 import { ResultsComponent } from './dashboard/admin-dashboard/results/results.component';
+import { QuizService } from './services/quiz/quiz.service';
+import { SignupService } from './services/signup/signup.service';
+import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,7 +81,18 @@ import { ResultsComponent } from './dashboard/admin-dashboard/results/results.co
 
     
   ],
-  providers: [LoginService , LocalStorageService],
+  providers: [
+    LoginService ,
+    LocalStorageService ,
+    QuizService ,
+    SignupService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      multi:true,
+      useClass:AuthInterceptorService,
+      
+    }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
