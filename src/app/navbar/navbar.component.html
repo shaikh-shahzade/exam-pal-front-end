@@ -12,7 +12,7 @@
         <div class="navbar-nav  left-navs d-flex ">
 
           <a routerLink="" mat-button class=" navbar-item active-nav">How it works?</a>
-          <a routerLink="Quizes" mat-button class=" navbar-item">Quizes</a>
+          <a routerLink="quizes" mat-button class=" navbar-item">Quizes</a>
           <a routerLink="aboutus" mat-button class=" navbar-item">About Us</a>
           <a *ngIf="!(userLogin&&userDetails)else profile" routerLink="login" mat-button class=" navbar-item login-button">Login</a>
           <ng-template #profile >

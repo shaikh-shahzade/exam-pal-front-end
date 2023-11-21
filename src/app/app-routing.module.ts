@@ -29,6 +29,10 @@ const routes: Routes = [
     component:SignupComponent
   },
   {
+    path:"quizes",
+    component:QuizComponent
+  },
+  {
     path:"user",
     component:DashboardComponent ,
     children:[{
