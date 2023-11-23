@@ -1,6 +1,7 @@
 import { Component, HostListener, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { QuizService } from '../services/quiz/quiz.service';
 
 @Component({
   selector: 'app-quiz',
@@ -10,12 +11,22 @@ import { MatTableDataSource } from '@angular/material/table';
 export class QuizComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-
+  quiz={}
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+  constructor(private quizService:QuizService)
+  {
+
   }
+  ngAfterViewInit( ) {
+    this.dataSource.paginator = this.paginator;
+    this.paginator._changePageSize(10);
+    this.quizService.retrieveQuizes();
+    
+
+
+  }
+  
 
 }
 export interface PeriodicElement {

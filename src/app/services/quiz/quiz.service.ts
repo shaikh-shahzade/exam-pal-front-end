@@ -18,4 +18,12 @@ export class QuizService {
       if(val)
       console.log(val);});
   }
+
+  retrieveQuizes()
+  {
+    this.httpClient.get<Quiz[]>(AppConstants.BASE_URL+"quiz")
+    .subscribe((val)=>{
+      console.log(val);
+    })
+  }
 }
