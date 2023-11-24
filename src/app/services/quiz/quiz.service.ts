@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpBackend, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Quiz } from 'src/app/model/quiz.model';
 import { AppConstants } from 'src/app/uitility/constants-helper';
@@ -7,8 +7,12 @@ import { AppConstants } from 'src/app/uitility/constants-helper';
   providedIn: 'root'
 })
 export class QuizService {
-
-  constructor(private httpClient:HttpClient) { }
+  private httpNonAuthClient:HttpClient; 
+  private quizList:Quiz[];
+  
+  constructor(private httpClient:HttpClient,private httpBackend:HttpBackend) {
+    this.httpNonAuthClient= new HttpClient(httpBackend);
+   }
 
   createNewQuiz(quiz:Quiz)
   {
@@ -21,9 +25,15 @@ export class QuizService {
 
   retrieveQuizes()
   {
-    this.httpClient.get<Quiz[]>(AppConstants.BASE_URL+"quiz")
+    this.httpNonAuthClient.get<Quiz[]>(AppConstants.BASE_URL+"quiz/retrieve")
+    
     .subscribe((val)=>{
-      console.log(val);
+      if(val)
+      this.quizList=val;
     })
+  }
+  getAllQuizes():Quiz[]
+  {
+    return this.quizList;
   }
 }

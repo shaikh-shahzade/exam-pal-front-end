@@ -19,8 +19,9 @@ export class QuizComponent {
 
   }
   ngAfterViewInit( ) {
+    
+    //this.paginator._changePageSize(10);
     this.dataSource.paginator = this.paginator;
-    this.paginator._changePageSize(10);
     this.quizService.retrieveQuizes();
     
 
