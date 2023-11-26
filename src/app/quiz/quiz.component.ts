@@ -1,7 +1,8 @@
-import { Component, HostListener, ViewChild } from '@angular/core';
+import { AfterContentInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { QuizService } from '../services/quiz/quiz.service';
+import { Quiz } from '../model/quiz.model';
 
 @Component({
   selector: 'app-quiz',
@@ -9,21 +10,26 @@ import { QuizService } from '../services/quiz/quiz.service';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','questions','solve'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  quiz={}
+  quizList:Quiz[];
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private quizService:QuizService)
   {
 
   }
+  
   ngAfterViewInit( ) {
     
-    //this.paginator._changePageSize(10);
-    this.dataSource.paginator = this.paginator;
-    this.quizService.retrieveQuizes();
     
+    this.dataSource.paginator = this.paginator;
+   
+    this.quizService.retrieveQuizes().subscribe((val)=>{
+      if(val)
+      this.quizList=val;
+      
+    });
 
 
   }

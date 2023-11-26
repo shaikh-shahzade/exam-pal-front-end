@@ -25,15 +25,9 @@ export class QuizService {
 
   retrieveQuizes()
   {
-    this.httpNonAuthClient.get<Quiz[]>(AppConstants.BASE_URL+"quiz/retrieve")
+    return this.httpNonAuthClient
+    .get<Quiz[]>(AppConstants.BASE_URL+"quiz/retrieve");
     
-    .subscribe((val)=>{
-      if(val)
-      this.quizList=val;
-    })
   }
-  getAllQuizes():Quiz[]
-  {
-    return this.quizList;
-  }
+  
 }
