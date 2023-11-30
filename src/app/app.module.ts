@@ -33,6 +33,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { CreateQuizComponent } from './dashboard/admin-dashboard/create-quiz/create-quiz.component';
 import { ProfilePageComponent } from './dashboard/admin-dashboard/profile-page/profile-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatStepperModule} from '@angular/material/stepper'
 import { ShowUsersComponent } from './dashboard/admin-dashboard/show-users/show-users.component';
 import { ManageQuizesComponent } from './dashboard/admin-dashboard/manage-quizes/manage-quizes.component';
 import { AssignExamsComponent } from './dashboard/admin-dashboard/assign-exams/assign-exams.component';
@@ -40,6 +41,8 @@ import { ResultsComponent } from './dashboard/admin-dashboard/results/results.co
 import { QuizService } from './services/quiz/quiz.service';
 import { SignupService } from './services/signup/signup.service';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
+import { AboutUsComponent } from './about-us/about-us.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +59,8 @@ import { AuthInterceptorService } from './services/interceptors/auth-interceptor
     ShowUsersComponent,
     ManageQuizesComponent,
     AssignExamsComponent,
-    ResultsComponent
+    ResultsComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +82,8 @@ import { AuthInterceptorService } from './services/interceptors/auth-interceptor
     MatNativeDateModule,
     MatFormFieldModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatStepperModule
     
 
 
