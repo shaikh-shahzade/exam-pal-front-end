@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-about-us',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-us.component.css']
 })
 export class AboutUsComponent {
+  
+  isLinear = false;
 
+  constructor(private _formBuilder: FormBuilder) {}
 }
