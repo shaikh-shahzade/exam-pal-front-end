@@ -42,6 +42,7 @@ import { QuizService } from './services/quiz/quiz.service';
 import { SignupService } from './services/signup/signup.service';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { HowToComponent } from './how-to/how-to.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ManageQuizesComponent,
     AssignExamsComponent,
     ResultsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    HowToComponent
   ],
   imports: [
     BrowserModule,
