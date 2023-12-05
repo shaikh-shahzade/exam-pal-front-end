@@ -14,6 +14,7 @@ import { ManageQuizesComponent } from './dashboard/admin-dashboard/manage-quizes
 import { AssignExamsComponent } from './dashboard/admin-dashboard/assign-exams/assign-exams.component';
 import { ResultsComponent } from './dashboard/admin-dashboard/results/results.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { HowToComponent } from './how-to/how-to.component';
 
 const routes: Routes = [
   {
@@ -78,6 +79,10 @@ const routes: Routes = [
   {
     path:"aboutus",
     component:AboutUsComponent
+  },
+  {
+    path:"how",
+    component:HowToComponent
   },
   {
     path:"**",
