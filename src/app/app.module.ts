@@ -43,6 +43,7 @@ import { SignupService } from './services/signup/signup.service';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HowToComponent } from './how-to/how-to.component';
+import { ApiDocumentationsComponent } from './api-documentations/api-documentations.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { HowToComponent } from './how-to/how-to.component';
     AssignExamsComponent,
     ResultsComponent,
     AboutUsComponent,
-    HowToComponent
+    HowToComponent,
+    ApiDocumentationsComponent
   ],
   imports: [
     BrowserModule,
