@@ -44,6 +44,7 @@ import { AuthInterceptorService } from './services/interceptors/auth-interceptor
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HowToComponent } from './how-to/how-to.component';
 import { ApiDocumentationsComponent } from './api-documentations/api-documentations.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { ApiDocumentationsComponent } from './api-documentations/api-documentati
     ResultsComponent,
     AboutUsComponent,
     HowToComponent,
-    ApiDocumentationsComponent
+    ApiDocumentationsComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

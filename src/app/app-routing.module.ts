@@ -20,11 +20,22 @@ const routes: Routes = [
   {
     path:"",
     component:HomeComponent
-  }
-  ,
+  },
+  {
+    path:"aboutus",
+    component:AboutUsComponent
+  },
+  {
+    path:"how",
+    component:HowToComponent
+  },
   {
     path:"login",
     component:LoginComponent
+  },
+  {
+    path:"password/reset",
+    component:HomeComponent
   }
   ,{
     path:"signup",
@@ -37,7 +48,8 @@ const routes: Routes = [
   {
     path:"user",
     component:DashboardComponent ,
-    children:[{
+    children:[
+      {
       path:"",
       component:UserDashboardComponent
     },
@@ -71,18 +83,6 @@ const routes: Routes = [
     }
   ]
   }]
-  },
-  {
-    path:"quiz",
-    component:QuizComponent
-  },
-  {
-    path:"aboutus",
-    component:AboutUsComponent
-  },
-  {
-    path:"how",
-    component:HowToComponent
   },
   {
     path:"**",
