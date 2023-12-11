@@ -15,6 +15,7 @@ import { AssignExamsComponent } from './dashboard/admin-dashboard/assign-exams/a
 import { ResultsComponent } from './dashboard/admin-dashboard/results/results.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HowToComponent } from './how-to/how-to.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 const routes: Routes = [
   {
@@ -86,7 +87,7 @@ const routes: Routes = [
   },
   {
     path:"**",
-    component:HomeComponent
+    component:ErrorPageComponent
   }
 ];
 
