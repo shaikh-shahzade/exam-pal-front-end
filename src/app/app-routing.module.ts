@@ -54,6 +54,12 @@ const routes: Routes = [
       path:"",
       component:UserDashboardComponent
     },
+    {
+      path:"profile",
+      component:ProfilePageComponent
+    }
+  ]
+  },
   {
     path:"admin",
     component:AdminDashboardComponent,
@@ -83,7 +89,7 @@ const routes: Routes = [
       component:ResultsComponent
     }
   ]
-  }]
+  
   },
   {
     path:"**",

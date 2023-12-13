@@ -45,6 +45,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { HowToComponent } from './how-to/how-to.component';
 import { ApiDocumentationsComponent } from './api-documentations/api-documentations.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     AboutUsComponent,
     HowToComponent,
     ApiDocumentationsComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
