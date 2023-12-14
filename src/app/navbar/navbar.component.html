@@ -30,10 +30,9 @@
 
           <div routerLink = {{profilePath}}  mat-menu-item class="py-3">
             <img [src]="baseUrl+ ('default.png')" class="profile-navbar-pic">
-          
-            Shaikh Shahzade</div>
-          <button mat-menu-item class="text-center">Dashboard</button>
-          <button mat-menu-item>Profile</button>
+          Shaikh Shahzade</div>
+          <button mat-menu-item routerLink="/user/dashboard" class="text-center">Dashboard</button>
+          <button mat-menu-item routerLink="/user/profile">Profile</button>
           <hr style="  border: 2px solid rgb(231, 229, 229); width: 99%; border-radius: 6%; margin: auto;" />
           <button  mat-menu-item  style="  border-radius: 2%;"><mat-icon>logout</mat-icon>Logout</button>
 

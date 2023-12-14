@@ -16,6 +16,7 @@ import { ResultsComponent } from './dashboard/admin-dashboard/results/results.co
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HowToComponent } from './how-to/how-to.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -56,7 +57,11 @@ const routes: Routes = [
     },
     {
       path:"profile",
-      component:ProfilePageComponent
+      component:UserProfileComponent
+    },
+    {
+      path:"dashboard",
+      component:UserProfileComponent
     }
   ]
   },
