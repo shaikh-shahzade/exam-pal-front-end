@@ -43,7 +43,6 @@ import { SignupService } from './services/signup/signup.service';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HowToComponent } from './how-to/how-to.component';
-import { ApiDocumentationsComponent } from './api-documentations/api-documentations.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 
@@ -66,7 +65,6 @@ import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/us
     ResultsComponent,
     AboutUsComponent,
     HowToComponent,
-    ApiDocumentationsComponent,
     ErrorPageComponent,
     UserProfileComponent
   ],
