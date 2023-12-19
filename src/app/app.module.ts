@@ -29,6 +29,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from "@angular/material/datepicker"
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
+import {MatTabsModule} from '@angular/material/tabs'
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { CreateQuizComponent } from './dashboard/admin-dashboard/create-quiz/create-quiz.component';
 import { ProfilePageComponent } from './dashboard/admin-dashboard/profile-page/profile-page.component';
@@ -89,7 +90,8 @@ import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/us
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
-    MatStepperModule
+    MatStepperModule,
+    MatTabsModule
     
 
 
