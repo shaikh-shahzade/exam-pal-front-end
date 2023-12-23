@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-dashboard.component.css']
 })
 export class UserDashboardComponent {
+quizstart(val: String) {
+  console.log(val)
+}
 
 }
