@@ -1,98 +1,51 @@
-
-<div
-    class="container"
->
-    <div
-        class="row justify-content-center align-items-center g-2"
-    >
-          
-            <mat-tab-group>
-            <mat-tab label="All"> 
-                <div
-                    class="container"
-                >
-                   
-                
-                
-            <div
-                class="row justify-content-center align-items-center g-2"
-            >
+<div class="container">
+  <div class="row justify-content-center align-items-center g-2">
+    <mat-tab-group>
+      <mat-tab label="All">
+        <div class="container">
+          <div class="row  align-items-center g-2">
             
-                
-            
-                <div class="col-lg-4">
-
-                    <app-quiz-card [cardTitle]="'sample title'" 
-            [cardSubTitle]="'Sample subT'" 
-            [cardDescription]="'Sample Body'"
-            (startQuiz)="quizstart($event)"
-            ></app-quiz-card>
-
-                </div>
-                <div class="col-lg-4">
-
-                    <app-quiz-card [cardTitle]="'sample title'" 
-            [cardSubTitle]="'Sample subT'" 
-            [cardDescription]="'Sample Body'"
-            (startQuiz)="quizstart($event)"
-            ></app-quiz-card>
-
-                </div>
-                <div class="col-lg-4">
-
-                    <app-quiz-card [cardTitle]="'sample title'" 
-            [cardSubTitle]="'Sample subT'" 
-            [cardDescription]="'Sample Body'"
-            (startQuiz)="quizstart($event)"
-            ></app-quiz-card>
-
-                </div>
-                <div class="col-lg-4">
-
-                    <app-quiz-card [cardTitle]="'sample title'" 
-            [cardSubTitle]="'Sample subT'" 
-            [cardDescription]="'Sample Body'"
-            (startQuiz)="quizstart($event)"
-            ></app-quiz-card>
-
-                </div>
-                <div class="col-lg-4">
-
-                    <app-quiz-card [cardTitle]="'sample title'" 
-            [cardSubTitle]="'Sample subT'" 
-            [cardDescription]="'Sample Body'"
-            (startQuiz)="quizstart($event)"
-            ></app-quiz-card>
-
-                </div>
-                <div class="col-lg-4">
-
-                    <app-quiz-card [cardTitle]="'sample title'" 
-            [cardSubTitle]="'Sample subT'" 
-            [cardDescription]="'Sample Body'"
-            (startQuiz)="quizstart($event)"
-            ></app-quiz-card>
-
-                </div>
-                <div class="col-lg-4">
-
-                    <app-quiz-card [cardTitle]="'sample title'" 
-            [cardSubTitle]="'Sample subT'" 
-            [cardDescription]="'Sample Body'"
-            (startQuiz)="quizstart($event)"
-            ></app-quiz-card>
-
-                </div>
-                
+            <div *ngFor="let q of quizes" class="col-lg-4">
+              <app-quiz-card
+                [cardTitle]="q.title"
+                [cardSubTitle]="'Sample subT'"
+                [cardDescription]="'Sample Body'"
+                (startQuiz)="quizstart($event)"
+              ></app-quiz-card>
             </div>
-                 
+          </div>
         </div>
-            
-                
-            </mat-tab>
-            <mat-tab label="Active"> Content 2 </mat-tab>
-            <mat-tab label="Previous"> Content 3 </mat-tab>
-          </mat-tab-group></div>
-    
+      </mat-tab>
+      <mat-tab label="Active"> 
+        <div class="container">
+            <div class="row align-items-center g-2">
+              
+        <div class="col-lg-4">
+            <app-quiz-card
+              [cardTitle]="'sample title'"
+              [cardSubTitle]="'Sample subT'"
+              [cardDescription]="'Sample Body'"
+              (startQuiz)="quizstart($event)"
+            ></app-quiz-card>
+          </div>
+            </div>
+        </div>
+         </mat-tab>
+      <mat-tab label="Previous">
+        <div class="container">
+            <div class="row  align-items-center g-2">
+              
+        <div class="col-lg-4">
+            <app-quiz-card
+              [cardTitle]="'sample title'"
+              [cardSubTitle]="'Sample subT'"
+              [cardDescription]="'Sample Body'"
+              (startQuiz)="quizstart($event)"
+            ></app-quiz-card>
+          </div>
+        </div>
+        </div>
+        </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>
-

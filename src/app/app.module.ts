@@ -47,6 +47,7 @@ import { HowToComponent } from './how-to/how-to.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 import { QuizCardComponent } from './quiz-card/quiz-card.component';
+import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { QuizCardComponent } from './quiz-card/quiz-card.component';
     HowToComponent,
     ErrorPageComponent,
     UserProfileComponent,
-    QuizCardComponent
+    QuizCardComponent,
+    QuizDetailsComponent
   ],
   imports: [
     BrowserModule,
