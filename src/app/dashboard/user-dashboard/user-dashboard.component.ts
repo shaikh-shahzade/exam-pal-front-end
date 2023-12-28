@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { Quiz } from 'src/app/model/quiz.model';
 import { QuizService } from 'src/app/services/quiz/quiz.service';
 
@@ -10,7 +11,7 @@ import { QuizService } from 'src/app/services/quiz/quiz.service';
 export class UserDashboardComponent {
 
   quizes:Quiz[];
-  constructor(private quizService:QuizService)
+  constructor(private quizService:QuizService, private router:Router)
   {
 
   }
@@ -20,6 +21,7 @@ ngOnInit()
 }
 quizstart(val: String) {
   console.log(val)
+  this.router.navigate(['quiz','details'])
 }
 
 }
