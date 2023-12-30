@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Quiz } from '../model/quiz.model';
 
 @Component({
   selector: 'app-quiz-card',
@@ -7,15 +8,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class QuizCardComponent {
 
-  @Input() cardTitle:String;
-  @Input() cardSubTitle:String;
-  @Input() cardDescription:String;
-
-  @Output() startQuiz = new EventEmitter<String>();
+  @Input() quiz:Quiz;
+  @Output() startQuiz = new EventEmitter<Quiz>();
 
   start()
   {
-    this.startQuiz.emit("Quiz started");
+    this.startQuiz.emit(this.quiz);
   }
   
 

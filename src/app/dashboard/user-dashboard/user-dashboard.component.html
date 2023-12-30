@@ -7,10 +7,7 @@
             
             <div *ngFor="let q of quizes" class="col-lg-4">
               <app-quiz-card
-                [cardTitle]="q.title"
-                [cardSubTitle]="'Sample subT'"
-                [cardDescription]="'Sample Body'"
-                
+                [quiz]="q"
                 (startQuiz)="quizstart($event)"
               ></app-quiz-card>
             </div>
@@ -22,12 +19,7 @@
             <div class="row align-items-center g-2">
               
         <div class="col-lg-4">
-            <app-quiz-card
-              [cardTitle]="'sample title'"
-              [cardSubTitle]="'Sample subT'"
-              [cardDescription]="'Sample Body'"
-              (startQuiz)="quizstart($event)"
-            ></app-quiz-card>
+            
           </div>
             </div>
         </div>
@@ -37,12 +29,7 @@
             <div class="row  align-items-center g-2">
               
         <div class="col-lg-4">
-            <app-quiz-card
-              [cardTitle]="'sample title'"
-              [cardSubTitle]="'Sample subT'"
-              [cardDescription]="'Sample Body'"
-              (startQuiz)="quizstart($event)"
-            ></app-quiz-card>
+          
           </div>
         </div>
         </div>

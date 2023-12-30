@@ -19,9 +19,10 @@ ngOnInit()
 {
     this.quizService.retrieveQuizes().subscribe((val)=>{this.quizes=val});
 }
-quizstart(val: String) {
+quizstart(val: Quiz) {
   console.log(val)
-  this.router.navigate(['quiz','details'])
+  let queryP={id:val.qid}
+  this.router.navigate(['quiz/details'],{queryParams:queryP})
 }
 
 }
