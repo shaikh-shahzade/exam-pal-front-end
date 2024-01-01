@@ -22,7 +22,11 @@ export class QuizService {
       if(val)
       console.log(val);});
   }
-
+  getQuizById(id:String)
+  {
+    return this.httpNonAuthClient
+    .get<Quiz>(AppConstants.BASE_URL+"quiz/"+id);
+  }
   retrieveQuizes()
   {
     return this.httpNonAuthClient
