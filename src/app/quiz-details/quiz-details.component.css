@@ -1,6 +1,7 @@
 .courseTitle
 {
-    font-weight: 400;
+    text-transform: uppercase;
+    
     font-size: 3rem;
 
 }

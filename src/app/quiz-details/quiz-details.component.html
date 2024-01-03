@@ -1,15 +1,29 @@
-<div class="container">
+<div class="container py-3">
   <div class="row justify-content-center align-items-center g-2">
     <div class="col">
-        <h3 class="courseTitle">{{quiz.title}}</h3>
+      <h2 class="courseTitle">{{ quiz.title }}</h2>
     </div>
-   
-    <div
-        class="row justify-content-center align-items-center g-2"
-    >
-        <div class="col">{{quiz.category.title
-        }}</div>
+
+    <div class="row justify-content-center align-items-center g-2">
+      <div class="col">{{ quiz.category.title }}</div>
+      <div class="col">{{ quiz.lastDate}}</div>
+      <div class="col">{{ quiz.maxTime }}</div>
     </div>
-    
+
+    <div class="row justify-content-center align-items-center g-2">
+      <div class="col"><h2>Overview</h2></div>
+    </div>
+    <div class="row justify-content-center align-items-center g-2">
+      <div class="col"><p>{{quiz.description}}</p></div>
+    </div>
+    <div class="row justify-content-center align-items-center g-2">
+      <div class="col"><p>{{quiz.category}}</p></div>
+      <div class="col"><p>{{quiz.startDate}}</p></div>
+      <div class="col"><p>{{quiz.lastDate}}</p></div>
+      <div class="col"><p>{{quiz.maxMarks}}</p></div>
+      <div class="col"><p>{{quiz.maxTime}}</p></div>
+      <div class="col"><p>{{quiz.noOfQuestions}}</p></div>
+      <div class="col"><p>{{quiz.user}}</p></div>
+    </div>
   </div>
 </div>
