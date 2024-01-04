@@ -1,5 +1,8 @@
-<mat-card class="example-card">
+<mat-card class="my-card">
+  <img mat-card-image class="card-image"  src="/assets/quiz_def_pic.jpg" >
+  
   <mat-card-header>
+    
     <mat-card-title>{{ quiz.title }}</mat-card-title>
     <mat-card-subtitle>
       {{ quiz.category ? quiz.category.title : "" }}
@@ -11,7 +14,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button (click)="start()" mat-button>Start</button>
-    <button mat-button>View</button>
+    <button class="btn btn-outline-danger start-button" (click)="start()" >Start</button>
+    
   </mat-card-actions>
 </mat-card>
