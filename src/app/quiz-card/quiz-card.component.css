@@ -1,11 +1,13 @@
 .my-card {
   display: block;
-    height: 40vh;
+    
+    min-height: 47vh;
+    max-height: max-content;
   }
 
 .card-image{
   
-  height: 50%;
+  height: 30vh;
   width: 100%;
   
 }
