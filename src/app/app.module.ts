@@ -48,6 +48,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 import { QuizCardComponent } from './quiz-card/quiz-card.component';
 import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
+import { QuizAttemptComponent } from './dashboard/quiz-attempt/quiz-attempt.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
     ErrorPageComponent,
     UserProfileComponent,
     QuizCardComponent,
-    QuizDetailsComponent
+    QuizDetailsComponent,
+    QuizAttemptComponent
   ],
   imports: [
     BrowserModule,
