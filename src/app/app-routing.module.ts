@@ -18,6 +18,7 @@ import { HowToComponent } from './how-to/how-to.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
+import { QuizAttemptComponent } from './dashboard/quiz-attempt/quiz-attempt.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,12 @@ const routes: Routes = [
   {
     path:"quizes",
     component:QuizComponent
+  },
+  {
+    path:"quiz",
+    component:QuizAttemptComponent
+    
+
   },
   {
     path:"user",
