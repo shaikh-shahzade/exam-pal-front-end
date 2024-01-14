@@ -19,6 +19,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
 import { QuizAttemptComponent } from './dashboard/quiz-attempt/quiz-attempt.component';
+import { StartPageComponent } from './dashboard/quiz-attempt/start-page/start-page.component';
 
 const routes: Routes = [
   {
@@ -55,8 +56,13 @@ const routes: Routes = [
   },
   {
     path:"quiz",
-    component:QuizAttemptComponent
-    
+    component:QuizAttemptComponent,
+    children:[
+      {
+        path:"start",
+        component:StartPageComponent
+      }
+    ]
 
   },
   {
