@@ -50,6 +50,7 @@ import { QuizCardComponent } from './quiz-card/quiz-card.component';
 import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
 import { QuizAttemptComponent } from './dashboard/quiz-attempt/quiz-attempt.component';
 import { StartPageComponent } from './dashboard/quiz-attempt/start-page/start-page.component';
+import { SolveQuizComponent } from './dashboard/quiz-attempt/solve-quiz/solve-quiz.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { StartPageComponent } from './dashboard/quiz-attempt/start-page/start-pa
     QuizCardComponent,
     QuizDetailsComponent,
     QuizAttemptComponent,
-    StartPageComponent
+    StartPageComponent,
+    SolveQuizComponent
   ],
   imports: [
     BrowserModule,

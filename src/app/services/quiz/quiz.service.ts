@@ -30,7 +30,7 @@ export class QuizService {
   retrieveQuizes()
   {
     return this.httpNonAuthClient
-    .get<Quiz[]>(AppConstants.BASE_URL+"quiz/retrieve");
+    .get<Quiz[]>(AppConstants.BASE_URL+"quiz/list");
     
   }
   

@@ -20,6 +20,7 @@ import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/us
 import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
 import { QuizAttemptComponent } from './dashboard/quiz-attempt/quiz-attempt.component';
 import { StartPageComponent } from './dashboard/quiz-attempt/start-page/start-page.component';
+import { SolveQuizComponent } from './dashboard/quiz-attempt/solve-quiz/solve-quiz.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
       {
         path:"start",
         component:StartPageComponent
+      },
+      {
+        path:"solve",
+        component:SolveQuizComponent
       }
     ]
 
