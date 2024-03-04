@@ -14,7 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
@@ -51,6 +51,7 @@ import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
 import { QuizAttemptComponent } from './dashboard/quiz-attempt/quiz-attempt.component';
 import { StartPageComponent } from './dashboard/quiz-attempt/start-page/start-page.component';
 import { SolveQuizComponent } from './dashboard/quiz-attempt/solve-quiz/solve-quiz.component';
+import { SolveService } from './services/solve/solve.service';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,8 @@ import { SolveQuizComponent } from './dashboard/quiz-attempt/solve-quiz/solve-qu
     MatTableModule,
     MatPaginatorModule,
     MatStepperModule,
-    MatTabsModule
+    MatTabsModule,
+    ReactiveFormsModule
     
 
 
@@ -113,6 +115,7 @@ import { SolveQuizComponent } from './dashboard/quiz-attempt/solve-quiz/solve-qu
     LocalStorageService ,
     QuizService ,
     SignupService,
+    SolveService,
     {
       provide:HTTP_INTERCEPTORS,
       multi:true,
