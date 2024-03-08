@@ -14,5 +14,9 @@ export class SolveService {
   {
 
   }
+  private getQuestionsByQuizId(id:String)
+  {
+    return this.httpClient.get(AppConstants.BASE_URL+"/question/quiz/"+id);
+  }
 
 }

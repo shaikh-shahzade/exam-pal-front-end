@@ -52,7 +52,7 @@ import { QuizAttemptComponent } from './dashboard/quiz-attempt/quiz-attempt.comp
 import { StartPageComponent } from './dashboard/quiz-attempt/start-page/start-page.component';
 import { SolveQuizComponent } from './dashboard/quiz-attempt/solve-quiz/solve-quiz.component';
 import { SolveService } from './services/solve/solve.service';
-import { QuestionFormComponent } from './src/app/dashboard/quiz-attempt/solve-quiz/question-form/question-form.component';
+import { QuestionFormComponent } from './dashboard/quiz-attempt/solve-quiz/question-form/question-form.component';
 
 @NgModule({
   declarations: [

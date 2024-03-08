@@ -3,6 +3,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ActivatedRoute, Router,ParamMap, RouterState, RouterStateSnapshot } from '@angular/router';
+import { range } from 'rxjs';
 import { Quiz } from 'src/app/model/quiz.model';
 import { QuizService } from 'src/app/services/quiz/quiz.service';
 import { SolveService } from 'src/app/services/solve/solve.service';
