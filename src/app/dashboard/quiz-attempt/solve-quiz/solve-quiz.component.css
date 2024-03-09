@@ -1,0 +1,9 @@
+.content-holder
+{
+    width: 80%;
+    overflow: scroll;
+}
+.content-holder .row
+{
+    width: 100vw;
+}

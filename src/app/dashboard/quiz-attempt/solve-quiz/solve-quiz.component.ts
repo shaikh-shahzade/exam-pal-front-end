@@ -17,6 +17,8 @@ import { SolveService } from 'src/app/services/solve/solve.service';
 export class SolveQuizComponent implements AfterViewInit {
 
   private quiz:Quiz;
+   questionsList = Array.from(Array(10).keys());
+
 
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],
