@@ -13,15 +13,16 @@ export class AuthInterceptorService implements HttpInterceptor{
     // if(this.loginService.isLoggedIn)
     // {
       
-      const newReq  = req.clone
-      (
-        {
-         headers: req.headers.append("Authorization" , this.loginService.loginToken)
-        }
-          );
-        console.log(newReq);
-    //}
-    return next.handle(newReq);
+    //   const newReq  = req.clone
+    //   (
+    //     {
+    //      headers: req.headers.append("Authorization" , this.loginService.loginToken)
+    //     }
+    //       );
+    //     console.log(newReq);
+    // //}
+    // return next.handle(newReq);
+    return next.handle(req);
 
   }
 }

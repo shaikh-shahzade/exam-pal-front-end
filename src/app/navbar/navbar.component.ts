@@ -3,6 +3,7 @@ import { LoginService } from '../services/login/login.service';
 import { UserDetails } from '../model/UserDetails';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { AppConstants } from '../uitility/constants-helper';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -16,7 +17,8 @@ export class NavbarComponent  {
 
 
   baseUrl:string = AppConstants.IMAGE_URL;
-  constructor(private loginService:LoginService)
+  constructor(private loginService:LoginService
+    )
   {
     this.loginService.loggedIn.subscribe( (userDetails)=>{
       this.userLogin=true;
@@ -31,6 +33,11 @@ export class NavbarComponent  {
   {
   
 
+  }
+  logout()
+  {
+      this.loginService.logout();
+      console.log("Called")
   }
   
 }

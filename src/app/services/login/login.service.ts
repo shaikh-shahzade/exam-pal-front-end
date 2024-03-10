@@ -13,7 +13,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 @Injectable()
 export class LoginService
 {
-    userDetails!:UserDetails ;
+    userDetails!:UserDetails|null ;
     isLoggedIn:Boolean;
     loginToken:string;
     loggedIn : Subject<UserDetails> = new Subject<UserDetails>();
@@ -50,6 +50,12 @@ export class LoginService
                 
                         
         )
+    }
+    logout()
+    {
+        this.isLoggedIn=false;
+        this.userDetails=null;
+        this.loginToken="";
     }
 
 
