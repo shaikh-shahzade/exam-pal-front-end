@@ -82,10 +82,10 @@
             
         </mat-form-field>
     </div>
-
+    <mat-slide-toggle color="warn" (toggleChange)="print()" >Host Account</mat-slide-toggle>
     <div class="row form-button justify-content-center align-items-center g-2">
         <button type="submit" mat-flat-button color="primary">Submit</button>
-        <button mat-flat-button color="warn">Reset</button>
+        <button type="reset" mat-flat-button color="warn">Reset</button>
    
     </div>
      </form>

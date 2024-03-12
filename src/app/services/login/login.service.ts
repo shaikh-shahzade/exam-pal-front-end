@@ -14,6 +14,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 export class LoginService
 {
     userDetails!:UserDetails|null ;
+    userRoles:String[]|null;
     isLoggedIn:Boolean;
     loginToken:string;
     loggedIn : Subject<UserDetails> = new Subject<UserDetails>();
@@ -39,6 +40,7 @@ export class LoginService
                     this.userDetails = body.userDetails;
                     this.loggedIn.next(this.userDetails);
                     this.isLoggedIn=true;
+                    this.userRoles= body.userDetails.userRole.flatMap((e)=>e.role.role)
                 }
                 ,
                 (error)=>{

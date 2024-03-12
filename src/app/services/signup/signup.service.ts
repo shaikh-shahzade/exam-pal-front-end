@@ -10,10 +10,10 @@ import Swal from 'sweetalert2';
 })
 export class SignupService {
 
-  signupCall(user:User)
+  signupCall(user:User , isHostAccount:Boolean)
   {
     //send to backENd
-    this.httpClient.post( `${AppConstants.BASE_URL}user` , user)
+    this.httpClient.post( `${AppConstants.BASE_URL}user` ,user , {params:{isHostAccount:isHostAccount.valueOf()}})
               .subscribe((res)=>{
                 console.log(res);
                 //this.snack.open("success","close", {duration:2000});

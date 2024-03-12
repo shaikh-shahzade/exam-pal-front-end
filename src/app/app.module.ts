@@ -34,7 +34,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { CreateQuizComponent } from './dashboard/admin-dashboard/create-quiz/create-quiz.component';
 import { ProfilePageComponent } from './dashboard/admin-dashboard/profile-page/profile-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatStepperModule} from '@angular/material/stepper'
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 import { ShowUsersComponent } from './dashboard/admin-dashboard/show-users/show-users.component';
 import { ManageQuizesComponent } from './dashboard/admin-dashboard/manage-quizes/manage-quizes.component';
 import { AssignExamsComponent } from './dashboard/admin-dashboard/assign-exams/assign-exams.component';
@@ -105,7 +106,8 @@ import { QuestionFormComponent } from './dashboard/quiz-attempt/solve-quiz/quest
     MatPaginatorModule,
     MatStepperModule,
     MatTabsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSlideToggleModule
     
 
 
