@@ -13,7 +13,7 @@ export class NavbarComponent  {
 
   userLogin!:boolean; //:Subject<boolean> = new Subject<boolean>();
   userDetails!: UserDetails;
-  profilePath:string=`/user${ this.userDetails!=undefined&& this.userDetails.authorities.find(e=>e.authority==="admin-user")!=undefined?"/admin":""}`;
+  profilePath:string=`/user${ this.userDetails!=undefined&& this.userDetails.userRole.find(e=>e.role.role==="admin-user")!=undefined?"/admin":""}`;
 
 
   baseUrl:string = AppConstants.IMAGE_URL;
@@ -23,8 +23,8 @@ export class NavbarComponent  {
     this.loginService.loggedIn.subscribe( (userDetails)=>{
       this.userLogin=true;
       this.userDetails=userDetails;
-      console.log(userDetails);
-      this.profilePath=`/user${this.userDetails.authorities.find(e=>e.authority==="admin-user")!=undefined?"/admin":""}`;
+      console.log(userDetails); 
+      this.profilePath=`/user${this.userDetails.userRole.find(e=>e.role.role==="admin-user")!=undefined?"/admin":""}`;
 
     }); 
     // setInterval(()=>{console.log(this.userLogin  +""+ this.loginService.userDetails.username)},2000)
