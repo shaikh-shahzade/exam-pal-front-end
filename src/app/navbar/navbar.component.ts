@@ -13,6 +13,7 @@ export class NavbarComponent  {
 
   userLogin!:boolean; //:Subject<boolean> = new Subject<boolean>();
   userDetails!: UserDetails;
+  userRoles:String[]|null;
   profilePath:string=`/user${ this.userDetails!=undefined&& this.userDetails.userRole.find(e=>e.role.role==="admin-user")!=undefined?"/admin":""}`;
 
 
@@ -23,6 +24,9 @@ export class NavbarComponent  {
     this.loginService.loggedIn.subscribe( (userDetails)=>{
       this.userLogin=true;
       this.userDetails=userDetails;
+      loginService.userRoles=userDetails.userRole.flatMap(r=>r.role.role);
+      this.userRoles=loginService.userRoles;
+      console.log(this.userRoles)
       console.log(userDetails); 
       this.profilePath=`/user${this.userDetails.userRole.find(e=>e.role.role==="admin-user")!=undefined?"/admin":""}`;
 
