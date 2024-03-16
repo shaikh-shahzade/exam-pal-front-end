@@ -54,6 +54,7 @@ import { StartPageComponent } from './dashboard/quiz-attempt/start-page/start-pa
 import { SolveQuizComponent } from './dashboard/quiz-attempt/solve-quiz/solve-quiz.component';
 import { SolveService } from './services/solve/solve.service';
 import { QuestionFormComponent } from './dashboard/quiz-attempt/solve-quiz/question-form/question-form.component';
+import { ActiveQuizService } from './services/active-quiz/active-quiz.service';
 
 @NgModule({
   declarations: [
@@ -120,6 +121,7 @@ import { QuestionFormComponent } from './dashboard/quiz-attempt/solve-quiz/quest
     QuizService ,
     SignupService,
     SolveService,
+    ActiveQuizService,
     {
       provide:HTTP_INTERCEPTORS,
       multi:true,
