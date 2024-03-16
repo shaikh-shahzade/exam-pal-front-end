@@ -1,6 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, first } from 'rxjs';
 import { Quiz } from 'src/app/model/quiz.model';
+import { ActiveQuizService } from 'src/app/services/active-quiz/active-quiz.service';
 import { QuizService } from 'src/app/services/quiz/quiz.service';
 
 @Component({
@@ -9,12 +10,13 @@ import { QuizService } from 'src/app/services/quiz/quiz.service';
   styleUrls: ['./edit-quiz.component.css']
 })
 export class EditQuizComponent implements AfterViewInit {
-  quiz:Observable<Quiz[]>;
-  constructor(private quiz_service:QuizService)
+  active_quiz:Observable<Quiz>;
+  
+  constructor(private quiz_active_service:ActiveQuizService)
   {
 
   }
   ngAfterViewInit(): void {
-    this.quiz = this.quiz_service.getQuizByHost()
+    this.active_quiz = this.quiz_active_service.quiz;
   }
 }
