@@ -21,6 +21,7 @@ import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
 import { QuizAttemptComponent } from './dashboard/quiz-attempt/quiz-attempt.component';
 import { StartPageComponent } from './dashboard/quiz-attempt/start-page/start-page.component';
 import { SolveQuizComponent } from './dashboard/quiz-attempt/solve-quiz/solve-quiz.component';
+import { EditQuizComponent } from './dashboard/admin-dashboard/manage-quizes/edit-quiz/edit-quiz.component';
 
 const routes: Routes = [
   {
@@ -106,8 +107,13 @@ const routes: Routes = [
       component:ShowUsersComponent
     },
     {
+      path:"quiz/edit",
+      component:EditQuizComponent
+    },
+    {
       path:"quizes",
-      component:ManageQuizesComponent
+      component:ManageQuizesComponent,
+      
     },
     {
       path:"assign",

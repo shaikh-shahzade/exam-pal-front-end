@@ -1,31 +1,21 @@
+
 <div class="container">
     <div class="row  g-2">
-        <div class="col-md-5">
+        <div class="col-md-3"  *ngFor="let quiz of quizes|async">
+          
             <div class="card text-start">
-              <img class="card-img-top" src="holder.js/100px180/" alt="Title">
+              <img class="card-img-top" style="width:100%" src="/assets/quiz_def_pic.jpg" alt="Title">
               <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <p class="card-text">Body</p>
+                <h4 class="card-title">{{quiz.title}}</h4>
+                <p class="card-text">{{quiz.description}}</p>
+                <div class="example-button-container" style="text-align: end;">
+                  <button mat-mini-fab color="warn"  (click)="editQuiz(quiz)" aria-label="Example icon button with a filter list icon">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                </div>
               </div>
             </div>
         </div>
-        <div class="col-md-5">
-            <div class="card text-start">
-                <img class="card-img-top" src="holder.js/100px180/" alt="Title">
-                <div class="card-body">
-                  <h4 class="card-title">Title</h4>
-                  <p class="card-text">Body</p>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-5">
-            <div class="card text-start">
-                <img class="card-img-top" src="holder.js/100px180/" alt="Title">
-                <div class="card-body">
-                  <h4 class="card-title">Title</h4>
-                  <p class="card-text">Body</p>
-                </div>
-              </div>
-        </div>
+        
     </div>
 </div>

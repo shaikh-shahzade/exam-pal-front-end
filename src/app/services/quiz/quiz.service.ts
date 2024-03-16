@@ -33,5 +33,10 @@ export class QuizService {
     .get<Quiz[]>(AppConstants.BASE_URL+"quiz/list");
     
   }
+  getQuizByHost()
+  {
+    return this.httpClient
+    .get<Quiz[]>(AppConstants.BASE_URL+"quiz/list",{params:{host:true}})
+  }
   
 }
