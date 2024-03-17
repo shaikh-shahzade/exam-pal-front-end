@@ -5,3 +5,33 @@
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
+
+.vertical-hr
+{
+    border-image: linear-gradient(#787878, #ffffff) 30;
+    border-width: 0px;
+    border-style: solid;
+    border-left-width: 1px;
+    
+   
+}
+@media only screen and (max-width: 768px)
+{
+    .vertical-hr
+    {
+        border-width: 0px;
+    }
+}
+
+.question-heading
+{
+    color: black;
+    background-color: #e9ecef;
+    border-image: linear-gradient(#787878, #ffffff) 30;
+    border-width: 0px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left: 0px;
+    border-right: 0px;
+}

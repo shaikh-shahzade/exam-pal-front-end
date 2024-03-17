@@ -3,43 +3,35 @@
     *ngIf="active_quiz | async; let quiz"
    
 >
-    <div
-        class="row justify-content-center align-items-center g-2"
-    >
-        <div class="col"><div class="mb-3">
+
+<div
+    class="row justify-content-between"
+>
+    <div class="col col-12 col-md-5">
+        
+        <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Name</label>
             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
-          </div></div>
-        
-    </div>
-    
-    <div
-        class="row g-2"
+          </div>
+
+          <div
+        class="row justify-content-between"
     >
-        <div class="col col-4">
+        <div class="col col-12 col-md-4">
         
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Category</label>
-                <select class="form-select" id="exampleFormControlInput1" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">No. of Questions</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1">
               </div>
-            
 
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Marks</label>
                 <input type="number" class="form-control" id="exampleFormControlInput1">
               </div>
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">No. of Questions</label>
-                <input type="number" class="form-control" id="exampleFormControlInput1">
-              </div>
+              
         </div>
         
-        <div class="col col-3">
+        <div class="col col-12 col-md-7">
         
 
 
@@ -54,9 +46,44 @@
               </div>
 
         </div>
-           
-
+          
     </div>
+    
+    </div>
+
+    
+    <div class="col col-12 col-md-6 ">
+        
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Category</label>
+            <select class="form-select" size="5" style="padding-bottom: 0.7rem;" aria-label="Select">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Add Category</label>
+            
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Category.">
+          <button type="button" class="btn btn-light my-2">Add new Category</button>
+              
+          </div>
+    </div>
+   
+</div>
+
+
+    
+    
 
     
     <div
@@ -72,5 +99,85 @@
     </div>
     
 <hr id="question-section-hr">
+
+<div
+        class="row justify-content-center align-items-center g-2 question-heading p-2"
+    >
+        Questions
+    </div>
+
+
+    <div
+        class="row "
+    >
+        <div class="col">
+            <button type="button" class="btn btn-danger my-2" style="background-color: var(--main-red-color);">Create new</button>
+        </div>
+    </div>
+    <div
+        class="row " 
+    >
+        <div class="col">
+            <table class="table">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col" >#</th>
+                    <th scope="col" style="padding-left: 4rem;padding-right: 4rem;">Question</th>
+                    <th scope="col" >Edit</th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr>
+                    <th scope="row" >1</th>
+                    <td style="padding-left: 4rem;padding-right: 4rem;">What is the full form of OOPs,What is the full form of OOPs,What is the full form of OOPs,What is the full form of OOPs, why is it important in java?</td>
+                    <td >
+                        <button class="btn"  style="color: var(--main-red-color); padding: 0px; border: 0px;" color="warn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>    
+        </div>
+    </div>
+
 </div>
 
+
+<!-- Question Dialog -->
+<div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Question</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Question</span>
+                <input type="text" class="form-control" placeholder="Question" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+
+              <ul class="list-group list-group-flush list-group-numbered">
+                <li class="list-group-item">
+                    <span style="margin: 1rem">
+                        <input type="email" style="display: unset;
+                        width: 70%;" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
+                    </span>
+                </li>
+                
+              </ul>
+
+              <button class="btn  btn-outline-danger "   >
+                Add new answer
+              </button>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
