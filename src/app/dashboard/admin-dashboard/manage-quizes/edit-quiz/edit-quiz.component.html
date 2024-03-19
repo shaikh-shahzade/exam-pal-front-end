@@ -1,13 +1,13 @@
 <div
     class="container"
-    *ngIf="active_quiz | async; let quiz"
-   
+    *ngIf="quiz "
+    
 >
 <div
     class="row  justify-content-end align-items-end "
 >
     <div class="col col-3 text-end ">
-        <button type="button" class="btn btn-success">Save</button>
+        <button type="button" (click)="updateQuiz()" class="btn btn-success">Save</button>
     </div>
    
 </div>
@@ -20,7 +20,7 @@
         
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Name</label>
-            <input type="email" value="{{quiz.title}}" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
+            <input type="email"  [(ngModel)]="quiz.title" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
           </div>
 
           <div
@@ -30,12 +30,12 @@
         
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Time limit (mins)</label>
-                <input type="number" value="{{quiz.maxTime}}" class="form-control" id="exampleFormControlInput1">
+                <input type="number" [(ngModel)]="quiz.maxTime"  class="form-control" id="exampleFormControlInput1">
               </div>
 
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Marks</label>
-                <input type="number" value="{{quiz.maxMarks}}" class="form-control" id="exampleFormControlInput1">
+                <input type="number" [(ngModel)]="quiz.maxMarks"  class="form-control" id="exampleFormControlInput1">
               </div>
               
         </div>
@@ -46,12 +46,12 @@
 
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Start Date</label>
-                <input type="datetime-local" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
+                <input type="datetime-local" [(ngModel)]="quiz.startDate" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
               </div>
 
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Last Date</label>
-                <input type="datetime-local" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <input type="datetime-local" [(ngModel)]="quiz.lastDate" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
               </div>
 
         </div>
@@ -65,10 +65,10 @@
         
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Category</label>
-            <select class="form-select" size="5" style="padding-bottom: 0.7rem;" aria-label="Select">
-                <option >Open this select menu</option>
+            <select   class="form-select" size="5" style="padding-bottom: 0.7rem;" aria-label="Select">
+                <option>Open this select menu</option>
                 
-                <option  *ngFor="let category of categories|async" value="{{category.cid}}" [selected]="category.title=='Energy'"> {{category.title}}</option>
+                <option  *ngFor="let category of categories|async"  value="{{category}}" [selected]="category.title=='Energy'"> {{category.title}}</option>
 
               </select>
               
@@ -76,8 +76,8 @@
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Add Category</label>
             
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Category.">
-          <button type="button" class="btn btn-light my-2">Add new Category</button>
+            <input type="text" #cat class="form-control" id="exampleFormControlInput1" placeholder="Enter Category.">
+          <button type="button" (click)="addCategory(cat.value)" class="btn btn-light my-2">Add new Category</button>
               
           </div>
     </div>
@@ -95,7 +95,7 @@
         <div class="col">
             <div class="input-group">
                 <span class="input-group-text">Description</span>
-                <textarea class="form-control" aria-label="With textarea">{{quiz.description}}</textarea>
+                <textarea class="form-control" [(ngModel)]="quiz.description" aria-label="With textarea">{{quiz.description}}</textarea>
               </div>
         </div>
         

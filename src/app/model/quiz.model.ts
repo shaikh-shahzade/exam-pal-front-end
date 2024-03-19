@@ -12,7 +12,7 @@ export class Quiz
     noOfQuestions:Number
     title:string
     category:Category
-    user:User
+    user:User|null
     lastDate:Date
     startDate:Date
     difficulty:string

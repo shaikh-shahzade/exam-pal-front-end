@@ -19,10 +19,10 @@ export class ManageQuizesComponent implements AfterViewInit , OnInit , AfterCont
     
   }
   ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
   ngAfterContentInit(): void {
     this.quizes = this.quiz_service.getQuizByHost();

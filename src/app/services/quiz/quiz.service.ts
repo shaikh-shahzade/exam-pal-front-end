@@ -1,4 +1,4 @@
-import { HttpBackend, HttpClient } from '@angular/common/http';
+import { HttpBackend, HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Quiz } from 'src/app/model/quiz.model';
@@ -37,6 +37,11 @@ export class QuizService {
   {
     return this.httpClient
     .get<Quiz[]>(AppConstants.BASE_URL+"quiz/list",{params:{host:true}})
+  }
+  updateQuiz(quiz:Quiz)
+  {
+    return this.httpClient
+    .put<Quiz>(AppConstants.BASE_URL+'quiz' , quiz, { headers:{["id"]:quiz.qid.toString() }})
   }
   
 }

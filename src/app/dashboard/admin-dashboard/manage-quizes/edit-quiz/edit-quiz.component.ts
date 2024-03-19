@@ -14,13 +14,35 @@ import { QuizService } from 'src/app/services/quiz/quiz.service';
 export class EditQuizComponent implements AfterViewInit {
   active_quiz:Observable<Quiz>;
   categories:Observable<Category[]>
-  constructor(private quiz_active_service:ActiveQuizService , private apiService:ApiUtilityService)
+  quiz:Quiz;
+
+  constructor(private quiz_active_service:ActiveQuizService,
+     private apiService:ApiUtilityService,
+     private quizService:QuizService)
   {
 
   }
+
+  updateQuiz()
+  {
+    console.log(this.quiz)
+    this.quiz.user=null
+    this.quizService.updateQuiz(this.quiz).subscribe(val=>this.quiz=val);
+  }
+  addCategory(category:string){
+    console.log(category)
+     let cat2:Category = new Category();
+    cat2.title=category;
+    console.log(cat2)
+    this.apiService.addCategories(cat2).subscribe(val=>{
+      this.categories=this.apiService.getCategories();
+    });
+    this.categories=this.apiService.getCategories();
+  }
+
   ngAfterViewInit(): void {
     this.active_quiz = this.quiz_active_service.quiz;
-    this.quiz_active_service.quiz.subscribe(val=>console.log(val))
+    this.quiz_active_service.quiz.subscribe(val=>this.quiz=val)
     this.categories=this.apiService.getCategories();
   }
 }
