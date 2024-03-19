@@ -1,4 +1,5 @@
 import { Category } from "./category.model"
+import { Question } from "./question.model"
 import { User } from "./user-model.model"
 
 export class Quiz 
@@ -14,4 +15,6 @@ export class Quiz
     user:User
     lastDate:Date
     startDate:Date
+    difficulty:string
+    questions:Question[]
 }
