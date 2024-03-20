@@ -14,7 +14,7 @@ export class ManageQuizesComponent implements AfterViewInit , OnInit , AfterCont
 
   quizes:Observable<Quiz[]>;
   constructor(private quiz_service:QuizService,
-    private quizActive:ActiveQuizService,
+    private quizActiveSerive:ActiveQuizService,
     private router:Router) {
     
   }
@@ -29,7 +29,7 @@ export class ManageQuizesComponent implements AfterViewInit , OnInit , AfterCont
   }
   editQuiz(quiz:Quiz)
   {
-    this.quizActive.quiz=new Observable(s=>s.next(quiz));
+    this.quizActiveSerive.quiz=quiz;
     this.router.navigate(["/admin/quiz/edit"])
   }
 }

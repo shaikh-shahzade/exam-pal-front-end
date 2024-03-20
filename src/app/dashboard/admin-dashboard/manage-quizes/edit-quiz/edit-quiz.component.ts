@@ -1,5 +1,7 @@
+
 import { AfterViewInit, Component } from '@angular/core';
 import { Observable, first } from 'rxjs';
+import { Answer } from 'src/app/model/answer.model';
 import { Category } from 'src/app/model/category.model';
 import { Question } from 'src/app/model/question.model';
 import { Quiz } from 'src/app/model/quiz.model';
@@ -13,9 +15,12 @@ import { QuizService } from 'src/app/services/quiz/quiz.service';
   styleUrls: ['./edit-quiz.component.css']
 })
 export class EditQuizComponent implements AfterViewInit {
-  active_quiz:Observable<Quiz>;
+  active_quiz:Quiz;
   categories:Observable<Category[]>
   quiz:Quiz;
+  selectedQuestion:Question = new Question();
+
+
 
   constructor(private quiz_active_service:ActiveQuizService,
      private apiService:ApiUtilityService,
@@ -33,8 +38,26 @@ export class EditQuizComponent implements AfterViewInit {
   addQuestion()
   {
     console.log("callled")
-    if(this.quiz.questions==undefined) this.quiz.questions=[]
-    this.quiz.questions.push(new Question())
+    if(this.quiz.question==undefined) this.quiz.question=[]
+    this.quiz.question.push(new Question())
+  }
+  addAnswer(question:Question)
+  {
+    if(question!=undefined)
+    {
+      if(question.answers==undefined)
+        question.answers=[]
+      question.answers.push(new Answer())
+    }
+    
+  }
+  changeCorrect(answer:Answer)
+  {
+      this.selectedQuestion.answers.forEach(val=>val.isCorrect=false)
+      answer.isCorrect=true
+  }
+  openDialog(q:Question): void {
+    this.selectedQuestion=q;
   }
   changeCategory(cat:Category)
   {
@@ -53,7 +76,7 @@ export class EditQuizComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.active_quiz = this.quiz_active_service.quiz;
-    this.quiz_active_service.quiz.subscribe(val=>this.quiz=val)
+    this.quiz=this.active_quiz
     this.categories=this.apiService.getCategories();
   }
 }
