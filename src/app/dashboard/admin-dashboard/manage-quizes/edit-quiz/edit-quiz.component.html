@@ -1,189 +1,260 @@
-<div
-    class="container"
-    *ngIf="quiz "
-    
->
-<div
-    class="row  justify-content-end align-items-end "
->
-    <div class="col col-3 text-end ">
-        <button type="button" (click)="updateQuiz()" class="btn btn-success">Save</button>
+<div class="container" *ngIf="quiz">
+  <div class="row justify-content-end align-items-end">
+    <div class="col col-3 text-end">
+      <button type="button" (click)="updateQuiz()" class="btn btn-success">
+        Save
+      </button>
     </div>
-   
-</div>
+  </div>
 
-
-<div
-    class="row justify-content-between"
->
+  <div class="row justify-content-between">
     <div class="col col-12 col-md-5">
-        
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Name</label>
-            <input type="email"  [(ngModel)]="quiz.title" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
-          </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input
+          type="email"
+          [(ngModel)]="quiz.title"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="Enter name..."
+        />
+      </div>
 
-          <div
-        class="row justify-content-between"
-    >
+      <div class="row justify-content-between">
         <div class="col col-12 col-md-4">
-        
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Time limit (mins)</label>
-                <input type="number" [(ngModel)]="quiz.maxTime"  class="form-control" id="exampleFormControlInput1">
-              </div>
-
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Marks</label>
-                <input type="number" [(ngModel)]="quiz.maxMarks"  class="form-control" id="exampleFormControlInput1">
-              </div>
-              
-        </div>
-        
-        <div class="col col-12 col-md-7">
-        
-
-
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Start Date</label>
-                <input type="datetime-local" [(ngModel)]="quiz.startDate" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
-              </div>
-
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Last Date</label>
-                <input type="datetime-local" [(ngModel)]="quiz.lastDate" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-              </div>
-
-        </div>
-          
-    </div>
-    
-    </div>
-
-    
-    <div class="col col-12 col-md-6 ">
-        
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Category</label>
-            <select   class="form-select" size="5" style="padding-bottom: 0.7rem;" aria-label="Select">
-                <option>Open this select menu</option>
-                
-                <option  *ngFor="let category of categories|async"  value="{{category}}" [selected]="category.title=='Energy'"> {{category.title}}</option>
-
-              </select>
-              
-          </div>
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Add Category</label>
-            
-            <input type="text" #cat class="form-control" id="exampleFormControlInput1" placeholder="Enter Category.">
-          <button type="button" (click)="addCategory(cat.value)" class="btn btn-light my-2">Add new Category</button>
-              
+            <label for="exampleFormControlInput1" class="form-label"
+              >Time limit (mins)</label
+            >
+            <input
+              type="number"
+              [(ngModel)]="quiz.maxTime"
+              class="form-control"
+              id="exampleFormControlInput1"
+            />
           </div>
-    </div>
-   
-</div>
 
-
-    
-    
-
-    
-    <div
-        class="row justify-content-center align-items-center g-2"
-    >
-        <div class="col">
-            <div class="input-group">
-                <span class="input-group-text">Description</span>
-                <textarea class="form-control" [(ngModel)]="quiz.description" aria-label="With textarea">{{quiz.description}}</textarea>
-              </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Marks</label
+            >
+            <input
+              type="number"
+              [(ngModel)]="quiz.maxMarks"
+              class="form-control"
+              id="exampleFormControlInput1"
+            />
+          </div>
         </div>
-        
-    </div>
-    
-<hr id="question-section-hr">
 
-<div
-        class="row justify-content-center align-items-center g-2 question-heading p-2"
-    >
-        Questions
-    </div>
+        <div class="col col-12 col-md-7">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Start Date</label
+            >
+            <input
+              type="datetime-local"
+              [(ngModel)]="quiz.startDate"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Enter name..."
+            />
+          </div>
 
-
-    <div
-        class="row justify-content-between"
-    >
-        <div class="col-4">
-            <button type="button" class="btn btn-danger my-2" style="background-color: var(--main-red-color);">Create new</button>
-        </div>
-        <div class="col-4 text-end align-self-center">
-            Total questions: {{quiz.noOfQuestions}}
-        </div>
-    </div>
-    <div
-        class="row " 
-    >
-        <div class="col">
-            <table class="table">
-                <thead class="table-light">
-                  <tr>
-                    <th scope="col" >#</th>
-                    <th scope="col" style="padding-left: 4rem;padding-right: 4rem;">Question</th>
-                    <th scope="col" >Edit</th>
-                  </tr>
-                </thead>
-                <tbody >
-                  <tr>
-                    <th scope="row" >1</th>
-                    <td style="padding-left: 4rem;padding-right: 4rem;">What is the full form of OOPs,What is the full form of OOPs,What is the full form of OOPs,What is the full form of OOPs, why is it important in java?</td>
-                    <td >
-                        <button class="btn"  style="color: var(--main-red-color); padding: 0px; border: 0px;" color="warn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <mat-icon>edit</mat-icon>
-                      </button>
-                    </td>
-                  </tr>
-                  
-                </tbody>
-              </table>    
-        </div>
-    </div>
-
-</div>
-
-
-<!-- Question Dialog -->
-<div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Question</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Question</span>
-                <input type="text" class="form-control" placeholder="Question" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-
-              <ul class="list-group list-group-flush list-group-numbered">
-                <li class="list-group-item">
-                    <span style="margin: 1rem">
-                        <input type="email" style="display: unset;
-                        width: 70%;" class="form-control" id="exampleFormControlInput1" placeholder="Enter name...">
-                    </span>
-                </li>
-                
-              </ul>
-
-              <button class="btn  btn-outline-danger "   >
-                Add new answer
-              </button>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save</button>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Last Date</label
+            >
+            <input
+              type="datetime-local"
+              [(ngModel)]="quiz.lastDate"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+            />
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="col col-12 col-md-6">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Category</label
+        >
+        <select
+          class="form-select"
+          size="5"
+          style="padding-bottom: 0.7rem"
+          aria-label="Select"
+        >
+          <option>Open this select menu</option>
+
+          <option
+            *ngFor="let category of categories | async"
+            (click)="changeCategory(category)"
+            value="{{ category }}"
+            [selected]="category.cid == quiz.category.cid"
+          >
+            {{ category.title }}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Add Category</label
+        >
+
+        <input
+          type="text"
+          #cat
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="Enter Category."
+        />
+        <button
+          type="button"
+          (click)="addCategory(cat.value)"
+          class="btn btn-light my-2"
+        >
+          Add new Category
+        </button>
+      </div>
+    </div>
   </div>
+
+  <div class="row justify-content-center align-items-center g-2">
+    <div class="col">
+      <div class="input-group">
+        <span class="input-group-text">Description</span>
+        <textarea
+          class="form-control"
+          [(ngModel)]="quiz.description"
+          aria-label="With textarea"
+          >{{ quiz.description }}</textarea
+        >
+      </div>
+    </div>
+  </div>
+
+  <hr id="question-section-hr" />
+
+  <div
+    class="row justify-content-center align-items-center g-2 question-heading p-2"
+  >
+    Questions
+  </div>
+
+  <div class="row justify-content-between">
+    <div class="col-4">
+      <button
+        type="button"
+        class="btn btn-danger my-2"
+        style="background-color: var(--main-red-color)"
+        (click)="addQuestion()"
+      >
+        Create new
+      </button>
+    </div>
+    <div class="col-4 text-end align-self-center">
+      Total questions: {{ quiz.noOfQuestions }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" style="padding-left: 4rem; padding-right: 4rem">
+              Question
+            </th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ques of (quiz.questions.entries())"  or>
+            <th scope="row">{{ques[0]+1}}</th>
+            <td style="padding-left: 4rem; padding-right: 4rem">
+              {{ques[1].content}}
+            </td>
+            <td>
+              <button
+                class="btn"
+                style="color: var(--main-red-color); padding: 0px; border: 0px"
+                color="warn"
+                data-bs-toggle="modal"
+                
+                [attr.data-bs-target]="'#id'+ques[0]"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Question Dialog -->
+<section *ngIf="quiz!==undefined   && quiz.questions!==undefined">
+<div
+  *ngFor="let ques of (quiz.questions.entries())"
+  class="modal fade"
+  [id]="'id'+ques[0]"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Question: {{ques[0]}}</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Question</span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Question"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+
+        <ul class="list-group list-group-flush list-group-numbered">
+          <li class="list-group-item">
+            <span style="margin: 1rem">
+              <input
+                type="email"
+                style="display: unset; width: 70%"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Enter name..."
+              />
+            </span>
+          </li>
+        </ul>
+
+        <button class="btn btn-outline-danger">Add new answer</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

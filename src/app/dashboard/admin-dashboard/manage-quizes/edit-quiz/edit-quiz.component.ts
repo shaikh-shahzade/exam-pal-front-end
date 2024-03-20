@@ -1,6 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Observable, first } from 'rxjs';
 import { Category } from 'src/app/model/category.model';
+import { Question } from 'src/app/model/question.model';
 import { Quiz } from 'src/app/model/quiz.model';
 import { ActiveQuizService } from 'src/app/services/active-quiz/active-quiz.service';
 import { ApiUtilityService } from 'src/app/services/api-utility/api-utility.service';
@@ -22,12 +23,22 @@ export class EditQuizComponent implements AfterViewInit {
   {
 
   }
-
+  getQuiz(quiz:Question){return quiz}
   updateQuiz()
   {
     console.log(this.quiz)
     this.quiz.user=null
     this.quizService.updateQuiz(this.quiz).subscribe(val=>this.quiz=val);
+  }
+  addQuestion()
+  {
+    console.log("callled")
+    if(this.quiz.questions==undefined) this.quiz.questions=[]
+    this.quiz.questions.push(new Question())
+  }
+  changeCategory(cat:Category)
+  {
+    this.quiz.category=cat
   }
   addCategory(category:string){
     console.log(category)
