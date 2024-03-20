@@ -56,7 +56,6 @@ import { SolveService } from './services/solve/solve.service';
 import { QuestionFormComponent } from './dashboard/quiz-attempt/solve-quiz/question-form/question-form.component';
 import { ActiveQuizService } from './services/active-quiz/active-quiz.service';
 import { EditQuizComponent } from './dashboard/admin-dashboard/manage-quizes/edit-quiz/edit-quiz.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,6 +84,7 @@ import { EditQuizComponent } from './dashboard/admin-dashboard/manage-quizes/edi
     SolveQuizComponent,
     QuestionFormComponent,
     EditQuizComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -124,6 +124,7 @@ import { EditQuizComponent } from './dashboard/admin-dashboard/manage-quizes/edi
     SignupService,
     SolveService,
     ActiveQuizService,
+    
     {
       provide:HTTP_INTERCEPTORS,
       multi:true,

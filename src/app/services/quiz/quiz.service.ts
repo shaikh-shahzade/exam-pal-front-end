@@ -19,6 +19,7 @@ export class QuizService {
 
   createNewQuiz(quiz:Quiz)
   {
+    
     return this.httpClient.post<Quiz>(AppConstants.BASE_URL+"quiz" , quiz)
     
   }

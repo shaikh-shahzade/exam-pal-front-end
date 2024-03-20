@@ -7,6 +7,6 @@ import { Quiz } from 'src/app/model/quiz.model';
 })
 export class ActiveQuizService {
 
-  quiz:Observable<Quiz>;
+  quiz:Quiz;
   constructor() { }
 }

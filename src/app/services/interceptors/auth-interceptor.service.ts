@@ -19,10 +19,11 @@ export class AuthInterceptorService implements HttpInterceptor{
          headers: req.headers.append("Authorization" , this.loginService.loginToken)
         }
           );
+          console.log("Calling again")
         console.log(newReq);
         return next.handle(newReq);
     }
-    
+    else
     return next.handle(req);
 
   }

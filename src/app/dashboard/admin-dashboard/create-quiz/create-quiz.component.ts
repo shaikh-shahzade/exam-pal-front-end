@@ -15,7 +15,7 @@ export class CreateQuizComponent {
 
   constructor(private quizService:QuizService,
      private router:Router,
-     private active_quiz:ActiveQuizService
+     private active_quiz_Service:ActiveQuizService
      )
   {
 
@@ -23,10 +23,11 @@ export class CreateQuizComponent {
   createQuiz()
   {
     
-    this.active_quiz.quiz = this.quizService.createNewQuiz(this.quiz);
-    this.active_quiz.quiz.subscribe({complete: ()=> {
-      this.router.navigate(["/admin/quiz/edit"]);
-    }})
+    this.quizService.createNewQuiz(this.quiz).subscribe((val)=>
+    {
+      this.active_quiz_Service.quiz=val;
+    },null,()=>{
+      this.router.navigate(["/admin/quiz/edit"]);})
     
      
   }
