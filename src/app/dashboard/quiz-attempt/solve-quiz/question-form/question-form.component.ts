@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Question } from 'src/app/model/question.model';
 
 @Component({
   selector: 'app-question-form',
@@ -10,4 +11,5 @@ export class QuestionFormComponent {
 
   @Input() formGroup:FormGroup;
   @Input() label:String;
+  @Input() question:Question;
 }

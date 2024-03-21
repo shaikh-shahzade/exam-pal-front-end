@@ -12,12 +12,10 @@
   <mat-stepper  [linear]="isLinear" #stepper >
     
 
-
-    <mat-step  *ngFor="let item of questionsList">
-      <ng-template matStepLabel>label</ng-template>
-      <app-question-form [label]="'this is add'" [formGroup]="firstFormGroup"></app-question-form>
+    <mat-step *ngFor=" let q of questions ;index as i" >
+      
+      <app-question-form [question]="q" [label]="'this is add'" [formGroup]="firstFormGroup"></app-question-form>
     </mat-step>
-
 
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>

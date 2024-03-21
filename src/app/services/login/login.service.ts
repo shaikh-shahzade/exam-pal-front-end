@@ -26,11 +26,12 @@ export class LoginService
     {
         this.isLoggedIn=false;
         this.httpClient = new HttpClient(httpBackend);
-        this.autologin()
+        //this.autologin("host-Ac3")
+        this.autologin("normal")
     }
-    autologin()
+    autologin(username:string)
     {
-       let loginDetails:LoginUser = new LoginUser("host-Ac3","123456")
+       let loginDetails:LoginUser = new LoginUser(username,"123456")
        this.httpClient.post<loginResponse>(AppConstants.BASE_URL+"auth/generate" , loginDetails)
         .subscribe(
             (body) =>{

@@ -10,7 +10,7 @@
   </mat-card-header>
   <mat-card-content>
     <p>
-      {{ quiz.description.substr(0,70) }}...
+      {{quiz.description&& quiz.description.substr(0,70) }}...
     </p>
   </mat-card-content>
   <mat-card-actions>
