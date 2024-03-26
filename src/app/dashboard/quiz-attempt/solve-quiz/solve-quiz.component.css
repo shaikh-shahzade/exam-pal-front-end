@@ -8,6 +8,16 @@
     width: 100vw;
 }
 
+.next-prev-btn button
+{
+    max-height: 4rem;
+    width: 8rem;
+    margin: 1rem;
+    color: white;
 
-
+}
+.next-prev-btn button span
+{
+    max-height: 1rem;
+}
 
