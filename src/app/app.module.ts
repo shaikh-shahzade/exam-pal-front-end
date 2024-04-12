@@ -57,6 +57,7 @@ import { QuestionFormComponent } from './dashboard/quiz-attempt/solve-quiz/quest
 import { ActiveQuizService } from './services/active-quiz/active-quiz.service';
 import { EditQuizComponent } from './dashboard/admin-dashboard/manage-quizes/edit-quiz/edit-quiz.component';
 import { QuizAttemptTableComponent } from './dashboard/quiz-attempt/quiz-attempt-table/quiz-attempt-table.component';
+import { QuizResultComponent } from './dashboard/quiz-attempt/quiz-result/quiz-result.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +86,8 @@ import { QuizAttemptTableComponent } from './dashboard/quiz-attempt/quiz-attempt
     SolveQuizComponent,
     QuestionFormComponent,
     EditQuizComponent,
-    QuizAttemptTableComponent
+    QuizAttemptTableComponent,
+    QuizResultComponent
     
   ],
   imports: [
