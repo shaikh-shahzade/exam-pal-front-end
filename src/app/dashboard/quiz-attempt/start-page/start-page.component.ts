@@ -13,11 +13,7 @@ constructor(private solveService:SolveService){}
 
 startQuiz(quizId:number)
 {
-  let quizAttempt:QuizAttempt = new QuizAttempt;
-  quizAttempt.status="Started"
-  quizAttempt.date = Time
-
-  this.solveService.startQuiz()
+  
 }
 
 }
