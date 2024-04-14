@@ -1,53 +1,80 @@
 <div *ngIf="quiz" class="container  py-3">
-  <div class="row quiz-detail-section justify-content-center align-items-center g-2">
+  <div class="row quiz-detail-section justify-content-center  align-items-center ">
     
-    <div class="col col-10">
+    <div class="col col-12 col-lg-9">
       
   
-      <div class="row justify-content-center align-items-center g-2">
+      <div class="row justify-content-center align-items-center ">
         <div class="col">
           <h2 class="courseTitle">{{ quiz.title }} <span class="badge text-bg-success ">Active</span></h2>
         </div>
       </div>
 
-      <div class="row justify-content-center align-items-center g-2">
+      <div class="row justify-content-center align-items-center ">
         <div class="col">
           <h5 class="hostedBy">Hosted by <span>Host</span></h5>
         </div>
       </div>
+      
 
 
-      <div class="row justify-content-center align-items-center g-2">
-        <div class="col">{{ quiz.category && quiz.category.title }}</div>
-        <div class="col">{{ quiz.lastDate}}</div>
-        <div class="col">{{ quiz.maxTime }}</div>
-      </div>
-  
-      <div class="row justify-content-center align-items-center g-2">
-        <div class="col"><h2>Overview</h2></div>
-      </div>
-      <div class="row justify-content-center align-items-center g-2">
-        <div class="col"><p>{{quiz.description}}</p>
-          
-  
+      <div class="row ">
+        
+        <div
+          class="col "
+        >
+          <div class=" py-1">Category</div>
+          <div class=" py-1 fw-bold">{{ quiz.category && quiz.category.title }}</div>
         </div>
+        
+        <div
+          class="col"
+        >
+          <div class="  py-1">Opens on</div>
+          <div class="  py-1 fw-bold">{{quiz.startDate | date}} {{quiz.startDate | date:'hh:mm a'}}</div>
+        </div>
+
+        <div
+          class="col"
+        >
+          <div class="  py-1">Ends on</div>
+          <div class="  py-1 fw-bold">{{quiz.lastDate | date}} {{quiz.lastDate | date:'hh:mm a'}}</div>
+        </div>
+
+        <div
+          class="col"
+        >
+          <div class="  py-1">Duration</div>
+          <div class="  py-1 fw-bold">{{ quiz.maxTime }}mins</div>
+        </div>
+        
+
+
       </div>
-      <div class="row justify-content-center align-items-center g-2">
-        <div class="col"><p>{{quiz.category}}</p></div>
-        <div class="col"><p>{{quiz.startDate}}</p></div>
-        <div class="col"><p>{{quiz.lastDate}}</p></div>
-        <div class="col"><p>{{quiz.maxMarks}}</p></div>
-        <div class="col"><p>{{quiz.maxTime}}</p></div>
-        <div class="col"><p>{{quiz.noOfQuestions}}</p></div>
-        <div class="col"><p>{{quiz.user}}</p></div>
+  
+      
+      
+      <div class="row mt-3 ">
+        <div class="col fw-bold fs-6">Overview</div>
       </div>
+      <div class="row justify-content-center align-items-center  my-2">
+        <div class="col">
+          <p>
+          {{quiz.description}}
+          </p>
+       </div>
+      </div>
+     
+      
     </div>
     
     
-    <div class="col col-2">
-      <div class="row justify-content-center align-items-center g-2">
+    <div class="col col-12 col-lg-3">
+     
+      
+      <div class="row ">
       <button  [routerLink]="['/quiz/start']" [queryParams]="{id:1}"
-      routerLinkActive="router-link-active" class="btn btn-danger">Start</button>
+      routerLinkActive="router-link-active" class="btn btn-danger py-3">Start</button>
     </div>
   </div>
       

@@ -2,7 +2,6 @@
 {
     text-transform: capitalize;
     color: #333;
-    font-family: Proxima Nova, Open Sans, Helvetica, Arial, sans-serif;
     font-weight: 600;
     font-size: 28px;
 
@@ -20,15 +19,16 @@
 {
     padding: 20px;
     background: #f7f8fa;
+    color: #333;
+    font-family: Proxima Nova, Open Sans, Helvetica, Arial, sans-serif;
 }
 .hostedBy
 {
     text-transform: capitalize;
-    color: #333;
-    font-family: Proxima Nova, Open Sans, Helvetica, Arial, sans-serif;
     font-weight: 100;
-    font-size: 14px;
+    font-size: 10px;
 }
 .hostedBy span{
     font-weight: 600;
+    font-size: 14px;
 }
