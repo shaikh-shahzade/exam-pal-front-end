@@ -22,12 +22,6 @@ export class SolveQuizComponent implements AfterViewInit {
    questions:Question[];
 
 
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
   isLinear = false;
 
   constructor(

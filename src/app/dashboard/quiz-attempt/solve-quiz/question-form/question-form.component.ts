@@ -9,7 +9,6 @@ import { Question } from 'src/app/model/question.model';
 })
 export class QuestionFormComponent {
 
-  @Input() formGroup:FormGroup;
-  @Input() label:String;
+  
   @Input() question:Question;
 }

@@ -33,7 +33,7 @@
       <div  *ngFor=" let q of questions ;index as i" [ngClass]="i==0?'active':''" class="carousel-item ">
         <div class="d-block w-100"  >
       
-          <app-question-form [question]="q" [label]="'this is add'" [formGroup]="firstFormGroup"></app-question-form>
+          <app-question-form [question]="q"  ></app-question-form>
         </div>
         
       </div>
