@@ -1,5 +1,6 @@
 import { Time } from "@angular/common";
 import { Timestamp } from "rxjs";
+import { Result } from "./result.model";
 
 export class QuizAttempt
 {
@@ -8,5 +9,5 @@ export class QuizAttempt
 	startTime:Time;
 	endTime:Time;
 	status:string;
-	//result;
+	result:Result[];
 }
