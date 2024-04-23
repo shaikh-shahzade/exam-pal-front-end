@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Answer } from 'src/app/model/answer.model';
 import { AttemptedQuestion } from 'src/app/model/attempted-question.model';
 import { Question } from 'src/app/model/question.model';
 
@@ -18,7 +19,10 @@ export class QuestionFormComponent implements OnInit{
     console.log(this.question)
   }
 
-  
+  attemptQuestion(answer:Answer)
+  {
+      this.questionAttempt.answer=answer;
+  }
   
 
 }

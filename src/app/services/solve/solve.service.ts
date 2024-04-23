@@ -22,7 +22,7 @@ export class SolveService {
 
   submitQuiz(quizAttempt:QuizAttempt)
   {
-    return this.httpClient.post<QuizAttempt>(AppConstants.BASE_URL+"attempt" ,quizAttempt )
+    return this.httpClient.post<QuizAttempt>(AppConstants.BASE_URL+"attempt/submit" ,quizAttempt )
   }
   
 }

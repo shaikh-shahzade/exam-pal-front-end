@@ -1,3 +1,4 @@
+import { AttemptedQuestion } from "./attempted-question.model";
 
 export class Result
 {
@@ -6,5 +7,5 @@ export class Result
 	totalAttempted:Number;
 	correctAnswers:Number;
 	timeTaken:Number;
-	attemptedQuestion:[];
+	attemptedQuestion:AttemptedQuestion[];
 }

@@ -9,5 +9,5 @@ export class QuizAttempt
 	startTime:Time;
 	endTime:Time;
 	status:string;
-	result:Result[];
+	result:Result;
 }

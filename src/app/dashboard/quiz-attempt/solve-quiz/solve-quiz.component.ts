@@ -4,7 +4,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ActivatedRoute, Router,ParamMap, RouterState, RouterStateSnapshot } from '@angular/router';
-import { range } from 'rxjs';
+import { of, range } from 'rxjs';
 import { AttemptedQuestion } from 'src/app/model/attempted-question.model';
 import { Question } from 'src/app/model/question.model';
 import { QuizAttempt } from 'src/app/model/quiz-attempt.model';
@@ -24,7 +24,6 @@ export class SolveQuizComponent implements AfterViewInit {
    quiz:Quiz;
    questions:Question[];
    quizAttempt:QuizAttempt;
-   result:Result;
    questionAtemptMap:Map<Question,AttemptedQuestion>;
 
   isLinear = false;
@@ -35,8 +34,7 @@ export class SolveQuizComponent implements AfterViewInit {
     private route: ActivatedRoute,
     private quizService:QuizService
   ) {
-    this.result = new Result();
-    this.result.attemptedQuestion=[];
+    
     this.questionAtemptMap= new Map();
   }
   ngAfterViewInit(): void {
@@ -49,8 +47,8 @@ export class SolveQuizComponent implements AfterViewInit {
       this.quiz = value;
       this.questions=value.question;
 
-      this.questions.forEach(q=>this.questionAtemptMap.set(q,new AttemptedQuestion()))
-      console.log(this.questionAtemptMap)
+      this.questions.forEach(q=>{this.questionAtemptMap.set(q,new AttemptedQuestion(q))});
+      
     });
 
     this.solveService.startQuiz( new QuizAttempt(),id).subscribe(val=>
@@ -63,9 +61,17 @@ export class SolveQuizComponent implements AfterViewInit {
 
   submitQuiz()
   {
+    this.quizAttempt.result = new Result();
+    this.quizAttempt.result.attemptedQuestion = [] 
+    for(const q of this.questionAtemptMap.values())
+      {
+        if(q.answer!=null)
+          this.quizAttempt.result.attemptedQuestion.push(q);
+      }
+    
     console.log(this.quizAttempt)
-    // this.solveService.submitQuiz(this.quizAttempt).subscribe((val)=>{
-    //     console.log(val.result)
-    // })
+     this.solveService.submitQuiz(this.quizAttempt).subscribe((val)=>{
+         console.log(val)
+    })
   }
 }

@@ -7,4 +7,8 @@ export class AttemptedQuestion
     isCorrect:Boolean;
     question:Question;
     answer:Answer;
+    constructor(question:Question)
+    {
+        this.question=question
+    }
 }
