@@ -13,7 +13,7 @@
       ">Time Left: <span style="color: rgb(74, 74, 74);">0:00:00</span> </span>
     
 
-    <button type="button" class="btn btn-success">Submit</button>
+    <button (click)="submitQuiz()" type="button" class="btn btn-success">Submit</button>
   
   </div>
   
@@ -30,10 +30,10 @@
       </div>
     <div class="carousel-inner">
       
-      <div  *ngFor=" let q of questions ;index as i" [ngClass]="i==0?'active':''" class="carousel-item ">
+      <div  *ngFor=" let q of questionAtemptMap |keyvalue ;index as i" [ngClass]="i==0?'active':''" class="carousel-item ">
         <div class="d-block w-100"  >
       
-          <app-question-form [question]="q"  ></app-question-form>
+          <app-question-form [question]="q.key"  [questionAttempt]="q.value" ></app-question-form>
         </div>
         
       </div>

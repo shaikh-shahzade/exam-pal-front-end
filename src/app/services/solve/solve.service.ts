@@ -13,12 +13,16 @@ export class SolveService {
 
   startQuiz(quizAttempt:QuizAttempt, quizId:string)
   {
-    new HttpHeaders()
-      return this.httpClient.post<QuizAttempt>(AppConstants.BASE_URL+"attempt/" , quizAttempt ,  { headers:{ ["id"]: quizId }} )
+    return this.httpClient.post<QuizAttempt>(AppConstants.BASE_URL+"attempt" ,{},  { headers:{ ["quizId"]: quizId }} )
   }
   getQuestionsByQuizId(id:String)
   {
     return this.httpClient.get(AppConstants.BASE_URL+"/question/quiz/"+id);
+  }
+
+  submitQuiz(quizAttempt:QuizAttempt)
+  {
+    return this.httpClient.post<QuizAttempt>(AppConstants.BASE_URL+"attempt" ,quizAttempt )
   }
   
 }

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { AttemptedQuestion } from 'src/app/model/attempted-question.model';
 import { Question } from 'src/app/model/question.model';
 
 @Component({
@@ -7,8 +8,17 @@ import { Question } from 'src/app/model/question.model';
   templateUrl: './question-form.component.html',
   styleUrls: ['./question-form.component.css']
 })
-export class QuestionFormComponent {
-
+export class QuestionFormComponent implements OnInit{
   
   @Input() question:Question;
+  @Input() questionAttempt:AttemptedQuestion;
+
+  
+  ngOnInit(): void {
+    console.log(this.question)
+  }
+
+  
+  
+
 }
