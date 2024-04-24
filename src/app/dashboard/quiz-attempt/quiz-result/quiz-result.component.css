@@ -1,0 +1,22 @@
+.quiz-result-head
+{
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.tick-box
+{
+    border-radius: 100%;
+    background-color: darkgreen;
+    height: 6rem ;
+    width: 6rem;
+}
+.nicejob
+{
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
+.box-shade
+{
+    background: gainsboro;
+}

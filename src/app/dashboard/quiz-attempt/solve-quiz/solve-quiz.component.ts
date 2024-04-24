@@ -32,7 +32,8 @@ export class SolveQuizComponent implements AfterViewInit {
     private _formBuilder: FormBuilder,
     private solveService:SolveService,
     private route: ActivatedRoute,
-    private quizService:QuizService
+    private quizService:QuizService,
+    private router:Router
   ) {
     
     this.questionAtemptMap= new Map();
@@ -72,6 +73,7 @@ export class SolveQuizComponent implements AfterViewInit {
     console.log(this.quizAttempt)
      this.solveService.submitQuiz(this.quizAttempt).subscribe((val)=>{
          console.log(val)
+         this.router.navigate(["quiz","result",this.quiz.qid])
     })
   }
 }

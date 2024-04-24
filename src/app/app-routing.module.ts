@@ -22,6 +22,7 @@ import { QuizAttemptComponent } from './dashboard/quiz-attempt/quiz-attempt.comp
 import { StartPageComponent } from './dashboard/quiz-attempt/start-page/start-page.component';
 import { SolveQuizComponent } from './dashboard/quiz-attempt/solve-quiz/solve-quiz.component';
 import { EditQuizComponent } from './dashboard/admin-dashboard/manage-quizes/edit-quiz/edit-quiz.component';
+import { QuizResultComponent } from './dashboard/quiz-attempt/quiz-result/quiz-result.component';
 
 const routes: Routes = [
   {
@@ -67,6 +68,11 @@ const routes: Routes = [
       {
         path:"solve",
         component:SolveQuizComponent
+      },
+      {
+        path:"result/:id",
+        component:QuizResultComponent,
+        pathMatch:'prefix'
       }
     ]
 
