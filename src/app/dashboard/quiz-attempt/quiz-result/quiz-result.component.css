@@ -20,3 +20,8 @@
 {
     background: gainsboro;
 }
+.review-button
+{
+    background: --var(main-color-red);
+    border-radius: 0%;
+}
