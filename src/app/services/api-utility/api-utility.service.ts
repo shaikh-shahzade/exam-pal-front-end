@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Category } from 'src/app/model/category.model';
+import { QuizAttempt } from 'src/app/model/quiz-attempt.model';
 import { Result } from 'src/app/model/result.model';
 import { AppConstants } from 'src/app/uitility/constants-helper';
 
@@ -10,9 +11,9 @@ import { AppConstants } from 'src/app/uitility/constants-helper';
 export class ApiUtilityService {
 
 
-  getResult(resId:string)
+  getAttempt(resId:string)
   {
-    return this.httpClient.get<Result>(AppConstants.BASE_URL+`attempt/result/${resId}`);
+    return this.httpClient.get<QuizAttempt>(AppConstants.BASE_URL+`attempt/result/${resId}`);
   }
   getCategories()
   {

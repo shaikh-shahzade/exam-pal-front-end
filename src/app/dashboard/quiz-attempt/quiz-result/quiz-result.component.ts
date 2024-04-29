@@ -2,6 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { interval } from 'rxjs';
 import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
+import { QuizAttempt } from 'src/app/model/quiz-attempt.model';
 import { Result } from 'src/app/model/result.model';
 import { ApiUtilityService } from 'src/app/services/api-utility/api-utility.service';
 
@@ -13,15 +14,16 @@ import { ApiUtilityService } from 'src/app/services/api-utility/api-utility.serv
 export class QuizResultComponent implements AfterViewInit {
 
   result:Result;
+  attempt:QuizAttempt;
 
   constructor(private route:ActivatedRoute , private apiUtility:ApiUtilityService)
   {
     
   }
   ngAfterViewInit(): void {
-    const resId = this.route.snapshot.paramMap.get("id");
-    if(resId!=null)
-    this.apiUtility.getResult(resId).subscribe((res=>{console.log(res)}))
+    const attemptID = this.route.snapshot.paramMap.get("id");
+    if(attemptID!=null)
+    this.apiUtility.getAttempt(attemptID).subscribe((att=>{console.log(att)}))
     
   }
 

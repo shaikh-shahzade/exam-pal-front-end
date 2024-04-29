@@ -73,7 +73,7 @@ export class SolveQuizComponent implements AfterViewInit {
     console.log(this.quizAttempt)
      this.solveService.submitQuiz(this.quizAttempt).subscribe((val)=>{
          console.log(val)
-         this.router.navigate(["quiz","result",this.quiz.qid])
+         this.router.navigate(["quiz","result",val.id])
     })
   }
 }
