@@ -9,31 +9,37 @@ import { ApiUtilityService } from 'src/app/services/api-utility/api-utility.serv
 @Component({
   selector: 'app-quiz-result',
   templateUrl: './quiz-result.component.html',
-  styleUrls: ['./quiz-result.component.css']
+  styleUrls: ['./quiz-result.component.css'],
 })
 export class QuizResultComponent implements AfterViewInit {
+  result: Result;
+  attempt: QuizAttempt;
+  passingScore: Number;
+  correctAnswers: Number;
+  passed: boolean;
 
-  result:Result;
-  attempt:QuizAttempt;
-
-  constructor(private route:ActivatedRoute , private apiUtility:ApiUtilityService)
-  {
-    
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private apiUtility: ApiUtilityService
+  ) {}
   ngAfterViewInit(): void {
-    const attemptID = this.route.snapshot.paramMap.get("id");
-    if(attemptID!=null)
-    this.apiUtility.getAttempt(attemptID).subscribe((att=>{console.log(att)}))
-    
+    const attemptID = this.route.snapshot.paramMap.get('id');
+    if (attemptID != null)
+      this.apiUtility.getAttempt(attemptID).subscribe((att) => {
+        this.attempt = att;
+          this.passingScore =  (this.attempt.result.marks.valueOf() / this.attempt.quiz.maxMarks.valueOf()) *100;
+            this.passed = this.attempt.result.marks >= this.attempt.quiz.passingMarks;
+            this.passingScore=this.attempt.result.correctAnswers;
+      });
   }
 
-  focusReviewSection(reviewQuiz:HTMLDivElement)
-  {
-    
-    setTimeout(()=>{reviewQuiz.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-      inline: 'end'
-      });} , 100)
+  focusReviewSection(reviewQuiz: HTMLDivElement) {
+    setTimeout(() => {
+      reviewQuiz.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+        inline: 'end',
+      });
+    }, 100);
   }
 }

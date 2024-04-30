@@ -8,6 +8,7 @@ export class Quiz
     active:Boolean
     description:string
     maxMarks:Number
+    passingMarks:Number;
     maxTime:Number
     noOfQuestions:Number
     title:string
