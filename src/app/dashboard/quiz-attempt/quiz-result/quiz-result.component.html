@@ -73,9 +73,7 @@
 
             <div class="collapse"  id="reviewQuiz">
                 <div  #reviewQuizArea class="card card-body ">
-                    <app-question-reviews></app-question-reviews>
-<app-question-reviews></app-question-reviews>
-                    <app-question-reviews></app-question-reviews>
+                    <app-question-reviews *ngFor="let attemptedQuestion of attempt.result.attemptedQuestion;  index as i;" [attemptedAquestion]="attemptedQuestion" [index]="i" ></app-question-reviews>
                 </div>
               </div>
            

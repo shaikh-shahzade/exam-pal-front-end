@@ -27,9 +27,13 @@ export class QuizResultComponent implements AfterViewInit {
     if (attemptID != null)
       this.apiUtility.getAttempt(attemptID).subscribe((att) => {
         this.attempt = att;
-          this.passingScore =  (this.attempt.result.marks.valueOf() / this.attempt.quiz.maxMarks.valueOf()) *100;
-            this.passed = this.attempt.result.marks >= this.attempt.quiz.passingMarks;
-            this.passingScore=this.attempt.result.correctAnswers;
+        this.passingScore =
+          (this.attempt.result.marks.valueOf() /
+            this.attempt.quiz.maxMarks.valueOf()) *
+          100;
+        this.passed =
+          this.attempt.result.marks >= this.attempt.quiz.passingMarks;
+        this.passingScore = this.attempt.result.correctAnswers;
       });
   }
 

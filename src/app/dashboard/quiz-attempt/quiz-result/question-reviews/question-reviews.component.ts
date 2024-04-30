@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AttemptedQuestion } from 'src/app/model/attempted-question.model';
 
 @Component({
   selector: 'app-question-reviews',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class QuestionReviewsComponent {
 
+  @Input() attemptedAquestion:AttemptedQuestion;
+  @Input() index:number;
 }
