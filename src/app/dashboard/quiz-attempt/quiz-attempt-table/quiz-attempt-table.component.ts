@@ -8,31 +8,23 @@ import { QuizAttempt } from 'src/app/model/quiz-attempt.model';
 @Component({
   selector: 'app-quiz-attempt-table',
   templateUrl: './quiz-attempt-table.component.html',
-  styleUrls: ['./quiz-attempt-table.component.css']
+  styleUrls: ['./quiz-attempt-table.component.css'],
 })
 export class QuizAttemptTableComponent implements AfterViewInit {
+  @Input() attemptsObser: Observable<QuizAttempt[]>;
 
-  @Input() attemptsObser:Observable<QuizAttempt[]>;
+  attempts: QuizAttempt[];
 
-  attempts:QuizAttempt[];
-
-  displayedColumns: string[] = ['position','User', 'Marks', 'Result', 'Date'];
-  
+  displayedColumns: string[] = ['position', 'User', 'Marks', 'Result', 'Date'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  dataSource:  MatTableDataSource<QuizAttempt>;;
+  dataSource: MatTableDataSource<QuizAttempt>;
 
   ngAfterViewInit() {
-    
-      this.attemptsObser.subscribe((val)=>
-        {this.attempts=val
-          this.dataSource = new MatTableDataSource<QuizAttempt>(this.attempts);
-        this.dataSource.paginator = this.paginator;
-        console.log(this.attempts.at(this.attempts.length-1)?.quiz.user?.username)
-        })
-      
-  
-  
+    this.attemptsObser.subscribe((val) => {
+      this.attempts = val;
+      this.dataSource = new MatTableDataSource<QuizAttempt>(this.attempts);
+      this.dataSource.paginator = this.paginator;
+    });
   }
-
 }
