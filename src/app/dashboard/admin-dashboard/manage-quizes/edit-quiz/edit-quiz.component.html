@@ -1,4 +1,4 @@
-<div class="container" *ngIf=" quiz!=undefined">
+<div class="container" *ngIf="quiz != undefined">
   <div class="row justify-content-end align-items-end">
     <div class="col col-3 text-end">
       <button type="button" (click)="updateQuiz()" class="btn btn-success">
@@ -41,6 +41,18 @@
             <input
               type="number"
               [(ngModel)]="quiz.maxMarks"
+              class="form-control"
+              id="exampleFormControlInput1"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Passing Marks</label
+            >
+            <input
+              type="number"
+              [(ngModel)]="quiz.passingMarks"
               class="form-control"
               id="exampleFormControlInput1"
             />
@@ -173,10 +185,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let ques of (quiz?.question?.entries())"  or>
-            <th scope="row">{{ques[0]+1}}</th>
+          <tr *ngFor="let ques of quiz?.question?.entries()" or>
+            <th scope="row">{{ ques[0] + 1 }}</th>
             <td style="padding-left: 4rem; padding-right: 4rem">
-              {{ques[1].content}}
+              {{ ques[1].content }}
             </td>
             <td>
               <button
@@ -184,7 +196,8 @@
                 style="color: var(--main-red-color); padding: 0px; border: 0px"
                 color="warn"
                 (click)="openDialog(ques[1])"
-                data-bs-toggle="modal" data-bs-target="#questionModal"
+                data-bs-toggle="modal"
+                data-bs-target="#questionModal"
               >
                 <mat-icon>edit</mat-icon>
               </button>
@@ -198,68 +211,80 @@
 
 <!-- Question Dialog -->
 <section>
-<div
-  
-  class="modal fade"
-  id="questionModal"
-  data-bs-backdrop="static"
-  data-bs-keyboard="false"
-  tabindex="-1"
-  aria-labelledby="staticBackdropLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Question</h1>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">Question</span>
-          <input
-            type="text"
-            [(ngModel)]="selectedQuestion.content"
-            class="form-control"
-            placeholder="Question"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
+  <div
+    class="modal fade"
+    id="questionModal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">
+            Edit Question
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
-        <div class="text-end">Correct</div>
-        <ul class="list-group list-group-flush list-group-numbered">
-          <li *ngFor="let answer of selectedQuestion?.answers" class="list-group-item">
-            <span style="margin: 1rem">
-              <input
-                type="email"
-                [(ngModel)]="answer.content"
-                style="display: unset; width: 70%"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Enter name..."
-              />
-              <input class="form-check-input text-end" 
-              style="float: inline-end;margin-top: 10px;padding: 7px;" 
-              type="checkbox" [(ngModel)]="answer.isCorrect" (click)="changeCorrect(answer)" id="flexCheckDefault">
-              
-            </span>
-          </li>
-        </ul>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Question</span>
+            <input
+              type="text"
+              [(ngModel)]="selectedQuestion.content"
+              class="form-control"
+              placeholder="Question"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="text-end">Correct</div>
+          <ul class="list-group list-group-flush list-group-numbered">
+            <li
+              *ngFor="let answer of selectedQuestion?.answers"
+              class="list-group-item"
+            >
+              <span style="margin: 1rem">
+                <input
+                  type="email"
+                  [(ngModel)]="answer.content"
+                  style="display: unset; width: 70%"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="Enter name..."
+                />
+                <input
+                  class="form-check-input text-end"
+                  style="float: inline-end; margin-top: 10px; padding: 7px"
+                  type="checkbox"
+                  [(ngModel)]="answer.isCorrect"
+                  (click)="changeCorrect(answer)"
+                  id="flexCheckDefault"
+                />
+              </span>
+            </li>
+          </ul>
 
-        <button class="btn btn-outline-danger" (click)="addAnswer(selectedQuestion)">Add new answer</button>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
-          Save
-        </button>
-        
+          <button
+            class="btn btn-outline-danger"
+            (click)="addAnswer(selectedQuestion)"
+          >
+            Add new answer
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+            Save
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </section>
