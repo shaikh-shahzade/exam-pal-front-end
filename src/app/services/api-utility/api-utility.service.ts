@@ -11,6 +11,10 @@ import { AppConstants } from 'src/app/uitility/constants-helper';
 })
 export class ApiUtilityService {
 
+  getAttemptsByHost()
+  {
+    return this.httpClient.get<QuizAttempt[]>(AppConstants.BASE_URL+`attempt/host/results`);
+  }
   getAttemptsByQuiz(quizId:string)
   {
     return this.httpClient.get<QuizAttempt[]>(AppConstants.BASE_URL+`attempt/${quizId}/results`);
