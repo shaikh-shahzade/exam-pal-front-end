@@ -71,7 +71,6 @@ export class EditQuizComponent implements AfterViewInit {
     this.apiService.addCategories(cat2).subscribe(val=>{
       this.categories=this.apiService.getCategories();
     });
-    this.categories=this.apiService.getCategories();
   }
 
   ngAfterViewInit(): void {
