@@ -7,29 +7,25 @@ import { QuizService } from 'src/app/services/quiz/quiz.service';
 @Component({
   selector: 'app-create-quiz',
   templateUrl: './create-quiz.component.html',
-  styleUrls: ['./create-quiz.component.css']
+  styleUrls: ['./create-quiz.component.css'],
 })
 export class CreateQuizComponent {
+  quiz: Quiz = new Quiz();
 
-  quiz:Quiz = new Quiz;
-
-  constructor(private quizService:QuizService,
-     private router:Router,
-     private active_quiz_Service:ActiveQuizService
-     )
-  {
-
+  constructor(
+    private quizService: QuizService,
+    private router: Router,
+    private active_quiz_Service: ActiveQuizService
+  ) {}
+  createQuiz() {
+    this.quizService.createNewQuiz(this.quiz).subscribe(
+      (val) => {
+        this.active_quiz_Service.quiz = val;
+      },
+      null,
+      () => {
+        this.router.navigate(['/admin/quiz/edit']);
+      }
+    );
   }
-  createQuiz()
-  {
-    
-    this.quizService.createNewQuiz(this.quiz).subscribe((val)=>
-    {
-      this.active_quiz_Service.quiz=val;
-    },null,()=>{
-      this.router.navigate(["/admin/quiz/edit"]);})
-    
-     
-  }
-  
 }

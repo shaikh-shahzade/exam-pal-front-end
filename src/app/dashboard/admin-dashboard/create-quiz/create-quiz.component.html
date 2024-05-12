@@ -1,99 +1,111 @@
 <div class="container">
-
   <form (ngSubmit)="createQuiz()">
-
     <div class="row justify-content-center align-items-center g-2">
-        <mat-form-field appearance="outline">
-            <mat-label>Title</mat-label>
-            <input [(ngModel)]="quiz.title" name="title" matInput placeholder="Title">
-            <mat-icon matSuffix>title</mat-icon>
-            <mat-hint>Title of Quiz</mat-hint>
-        </mat-form-field>
-        
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input
+          [(ngModel)]="quiz.title"
+          name="title"
+          matInput
+          placeholder="Title"
+        />
+        <mat-icon matSuffix>title</mat-icon>
+        <mat-hint>Title of Quiz</mat-hint>
+      </mat-form-field>
     </div>
 
     <div class="row justify-content-center align-items-center g-2">
-        
-        <mat-form-field appearance="outline">
-            <mat-label>Description</mat-label>
-            <textarea matInput [(ngModel)]="quiz.description" name="description" placeholder="Description"></textarea>
-            <mat-hint>Hint</mat-hint>
-          </mat-form-field>
-        
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          [(ngModel)]="quiz.description"
+          name="description"
+          placeholder="Description"
+        ></textarea>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
     </div>
 
     <div class="row justify-content-center align-items-center g-2">
-        
-        <mat-form-field appearance="outline">
-            <mat-label>Marks</mat-label>
-            <input type="number" [(ngModel)]="quiz.maxMarks" name="maxMarks" matInput placeholder="Placeholder">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            <mat-hint>Hint</mat-hint>
-          </mat-form-field>
-        
-    </div>
-
-
-    <div class="row justify-content-center align-items-center g-2">
-        
-        <mat-form-field appearance="outline">
-            <mat-label>Number of questions</mat-label>
-            <input type="number" [(ngModel)]="quiz.noOfQuestions" name = "noOfQuestions" matInput placeholder="Placeholder">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            <mat-hint>Hint</mat-hint>
-          </mat-form-field>
-        
-    </div>
-
-
-    <div class="row justify-content-center align-items-center g-2">
-        
-        <mat-form-field appearance="outline">
-            <mat-label>Test Duration</mat-label>
-            <input typr="number" [(ngModel)]="quiz.maxTime" name="maxTime" matInput placeholder="Placeholder">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            <mat-hint>Hint</mat-hint>
-          </mat-form-field>
-        
-    </div>
-
-
-    <div class="row justify-content-center align-items-center g-2">
-        
-        <mat-form-field>
-            <mat-label>Choose a date</mat-label>
-            <input matInput [(ngModel)]="quiz.startDate" name="startDate" [matDatepicker]="pickerD">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="pickerD"></mat-datepicker-toggle>
-            <mat-datepicker #pickerD></mat-datepicker>
-          </mat-form-field>
-        
+      <mat-form-field appearance="outline">
+        <mat-label>Marks</mat-label>
+        <input
+          type="number"
+          [(ngModel)]="quiz.maxMarks"
+          name="maxMarks"
+          matInput
+          placeholder="Placeholder"
+        />
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
     </div>
 
     <div class="row justify-content-center align-items-center g-2">
-        
-        <mat-form-field>
-            <mat-label>Favorite food</mat-label>
-            <mat-select>
-              <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
+      <mat-form-field appearance="outline">
+        <mat-label>Number of questions</mat-label>
+        <input
+          type="number"
+          [(ngModel)]="quiz.noOfQuestions"
+          name="noOfQuestions"
+          matInput
+          placeholder="Placeholder"
+        />
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center align-items-center g-2">
+      <mat-form-field appearance="outline">
+        <mat-label>Test Duration</mat-label>
+        <input
+          typr="number"
+          [(ngModel)]="quiz.maxTime"
+          name="maxTime"
+          matInput
+          placeholder="Placeholder"
+        />
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center align-items-center g-2">
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input
+          matInput
+          [(ngModel)]="quiz.startDate"
+          name="startDate"
+          [matDatepicker]="pickerD"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="pickerD"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #pickerD></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="row justify-content-center align-items-center g-2">
+      <mat-form-field>
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
                 {{food.viewValue}}
               </mat-option> -->
-              <!-- <mat-option >cat1</mat-option>
+          <!-- <mat-option >cat1</mat-option>
               <mat-option >cat2</mat-option>
               <mat-option >cat3</mat-option> -->
-            </mat-select>
-          </mat-form-field>
-        
+        </mat-select>
+      </mat-form-field>
     </div>
 
     <div class="row mx-3 justify-content-center align-items-center g-2">
-      <button class="btn btn-primary" type="submit">
-          Create
-      </button>
+      <button class="btn btn-primary" type="submit">Create</button>
     </div>
-    
-
   </form>
-
-
 </div>
