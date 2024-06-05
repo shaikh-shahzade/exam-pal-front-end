@@ -4,7 +4,7 @@ export class User {
   firstName: String = '';
   lastName: String = '';
   password: String = '';
-  profile: String = '';
+  profile_pic: String = '';
   phone: String = '';
   userRole: [
     {

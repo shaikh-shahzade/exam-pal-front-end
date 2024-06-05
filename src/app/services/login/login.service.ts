@@ -26,7 +26,7 @@ export class LoginService
     {
         this.isLoggedIn=false;
         this.httpClient = new HttpClient(httpBackend);
-        this.autologin("host-Ac3")
+        this.autologin("shah7")
         //this.autologin("normal")
     }
     autologin(username:string)

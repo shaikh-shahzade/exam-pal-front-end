@@ -5,6 +5,5 @@ export class Question{
 
     quesid:Number;
 	content:String;
-	quiz:Quiz;
 	answers:Answer[];
 }

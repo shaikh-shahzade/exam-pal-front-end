@@ -9,5 +9,5 @@ export class Result
 	correctAnswers:Number;
 	timeTaken:Number;
 	attemptedQuestion:AttemptedQuestion[];
-    quiz:Quiz;
+   
 }
