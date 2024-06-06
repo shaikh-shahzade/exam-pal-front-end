@@ -26,8 +26,7 @@ export class NavbarComponent  {
       this.userDetails=userDetails;
       loginService.userRoles=userDetails.userRole.flatMap(r=>r.role.role);
       this.userRoles=loginService.userRoles;
-      console.log(this.userRoles)
-      console.log(userDetails); 
+      
       this.profilePath=`/user${this.userDetails.userRole.find(e=>e.role.role==="admin-user")!=undefined?"/admin":""}`;
 
     }); 

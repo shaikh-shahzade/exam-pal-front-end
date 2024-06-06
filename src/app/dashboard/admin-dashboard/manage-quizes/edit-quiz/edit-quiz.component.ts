@@ -29,7 +29,6 @@ export class EditQuizComponent implements AfterViewInit {
   }
   updateQuiz() {
     console.log(this.quiz);
-    this.quiz.user = null;
     this.quizService
       .updateQuiz(this.quiz)
       .subscribe((val) => (this.quiz = val));

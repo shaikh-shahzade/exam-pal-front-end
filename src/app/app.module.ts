@@ -130,7 +130,6 @@ import { QuestionReviewsComponent } from './dashboard/quiz-attempt/quiz-result/q
     SignupService,
     SolveService,
     ActiveQuizService,
-    
     {
       provide:HTTP_INTERCEPTORS,
       multi:true,
