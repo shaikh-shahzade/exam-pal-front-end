@@ -25,12 +25,12 @@ export class QuizService {
   }
   getQuizById(id:String)
   {
-    return this.httpNonAuthClient
+    return this.httpClient
     .get<Quiz>(AppConstants.BASE_URL+"quiz/"+id);
   }
   retrieveQuizes()
   {
-    return this.httpNonAuthClient
+    return this.httpClient
     .get<Quiz[]>(AppConstants.BASE_URL+"quiz/list");
     
   }

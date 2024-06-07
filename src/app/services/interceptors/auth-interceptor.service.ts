@@ -10,17 +10,21 @@ export class AuthInterceptorService implements HttpInterceptor{
 
   constructor(private loginService:LoginService) { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    console.log("called");
     if(this.loginService.isLoggedIn)
     {
       
       const newReq  = req.clone
       (
         {
-         headers: req.headers.append("Authorization" , this.loginService.loginToken)
+          setHeaders: {
+            'Content-Type' : 'application/json; charset=utf-8',
+            'Accept'       : 'application/json',
+            'Authorization': `${this.loginService.loginToken}`,
+          },
         }
           );
-          console.log("Calling again")
-        console.log(newReq);
+         console.log(newReq) 
         return next.handle(newReq);
     }
     
