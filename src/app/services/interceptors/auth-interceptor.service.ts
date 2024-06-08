@@ -17,14 +17,11 @@ export class AuthInterceptorService implements HttpInterceptor{
       const newReq  = req.clone
       (
         {
-          setHeaders: {
-            'Content-Type' : 'application/json; charset=utf-8',
-            'Accept'       : 'application/json',
-            'Authorization': `${this.loginService.loginToken}`,
-          },
+         headers: req.headers.append("Authorization" , this.loginService.loginToken)
         }
           );
-         console.log(newReq) 
+          console.log("Calling again")
+        console.log(newReq);
         return next.handle(newReq);
     }
     
