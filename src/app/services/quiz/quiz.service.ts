@@ -25,8 +25,7 @@ export class QuizService {
   }
   getQuizById(id:String)
   {
-    return this.httpClient
-    .get<Quiz>(AppConstants.BASE_URL+"quiz/"+id);
+    return this.httpClient.get<Quiz>(AppConstants.BASE_URL+"quiz/"+id);
   }
   retrieveQuizes()
   {

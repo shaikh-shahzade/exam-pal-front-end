@@ -16,7 +16,6 @@ export class SignupService {
     this.httpClient.post( `${AppConstants.BASE_URL}user` ,user , {params:{isHostAccount:isHostAccount.valueOf()}})
               .subscribe((res)=>{
                 console.log(res);
-                //this.snack.open("success","close", {duration:2000});
                 Swal.fire(
                   'Good job!',
                   'User is Created.',
