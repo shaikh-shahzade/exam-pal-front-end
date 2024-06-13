@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Quiz } from 'src/app/model/quiz.model';
 
 @Component({
   selector: 'app-assign-exams',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AssignExamsComponent {
 
+  @Input() quiz:Quiz;
+  @Output() startQuiz = new EventEmitter<Quiz>();
+
+  start()
+  {
+    this.startQuiz.emit(this.quiz);
+  }
 }
