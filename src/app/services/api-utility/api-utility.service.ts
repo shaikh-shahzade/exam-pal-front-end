@@ -29,7 +29,6 @@ export class ApiUtilityService {
   }
   addCategories(category:Category)
   {
-    console.log("create")
     return this.httpClient.post<Category>(AppConstants.BASE_URL+"category",category);
   }
   getAllUsers()

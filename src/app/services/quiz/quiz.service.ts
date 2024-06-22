@@ -7,14 +7,11 @@ import { AppConstants } from 'src/app/uitility/constants-helper';
 @Injectable({
   providedIn: 'root'
 })
-export class QuizService {
-  private httpNonAuthClient:HttpClient; 
+export class QuizService { 
   private quizList:Quiz[];
   
-  constructor(private httpClient:HttpClient
-    ,private httpBackend:HttpBackend,
+  constructor(private httpClient:HttpClient,
     private router:Router) {
-    this.httpNonAuthClient= new HttpClient(httpBackend);
    }
 
   createNewQuiz(quiz:Quiz)
@@ -41,7 +38,7 @@ export class QuizService {
   updateQuiz(quiz:Quiz)
   {
     return this.httpClient
-    .put<Quiz>(AppConstants.BASE_URL+'quiz' , quiz, { headers:{["id"]:quiz.qid.toString() }})
+    .patch<Quiz>(AppConstants.BASE_URL+'quiz/'+quiz.qid , quiz)
   }
   
 }
