@@ -6,5 +6,4 @@ export class Answer
     content:String;
     isCorrect:Boolean;
     choice:Number;
-	
 }

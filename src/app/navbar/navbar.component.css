@@ -1,89 +1,69 @@
-:root
-{
-    --nav-link-custom-color: #959191;
-
+:root {
+  --nav-link-custom-color: #959191;
 }
 
-.nav-brand{
-    color: var(--main-red-color);
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 36px;
+.nav-brand {
+  color: var(--main-red-color);
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
 }
-.nav-brand .exam-text
-{
-    color: #3B3B3B;
+.nav-brand .exam-text {
+  color: #3b3b3b;
 }
-.navbar-comp
-{
-    background: var(--page-background);
-    
+.navbar-comp {
+  background: var(--page-background);
 }
 
+.navbar {
+  max-width: 90%;
+  margin: auto;
+}
+.left-navs {
+  column-gap: 3vw;
+  row-gap: 10px;
+}
+.left-navs .navbar-item {
+  color: #959191;
+}
+.left-navs .navbar-item {
+  width: fit-content;
+  font-family: "Poppins", sans-serif;
 
-.navbar 
-{
-    max-width: 90%;
-    margin: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
 }
-.left-navs 
-{
-    
-    column-gap: 3vw;
-    row-gap: 10px;
-
+.left-navs .active-nav {
+  color: var(--main-red-color);
 }
-.left-navs .navbar-item 
-{
-    color: #959191 ;
-}
-.left-navs .navbar-item
-{
-    
-    width: fit-content;
-    font-family: 'Poppins', sans-serif;
-   
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-}
-.left-navs .active-nav
-{
-    color:var(--main-red-color);
-}
-.left-navs .login-button
-{
-    border: 0.8px var(--main-red-color) solid;
-    border-radius: 0%;
-    color: var(--main-red-color);
-    width: 118px;
+.left-navs .login-button {
+  border: 0.8px var(--main-red-color) solid;
+  border-radius: 0%;
+  color: var(--main-red-color);
+  width: 118px;
 }
 
- .profile-navbar-pic
-{
-    width: 38px;
-    height: 38px;
-    border-radius: 100%;
-    margin-right: 6px;
+.profile-navbar-pic {
+  width: 38px;
+  height: 38px;
+  border-radius: 100%;
+  margin-right: 6px;
 }
 
-.mat-mdc-menu-content
-{
-    width: 20px;
-    border-radius: 50%;
-    background: #050303;
+.mat-mdc-menu-content {
+  width: 20px;
+  border-radius: 50%;
+  background: #050303;
 }
-.container
-{
-
-    border-bottom: 0.53px solid #ECECE8
+.container {
+  border-bottom: 0.53px solid #ecece8;
 }
-@media only screen and (max-width:992px){
-    .navbar .navbar-collapse
-    {
-        margin-top: 20px;
-    }
+@media only screen and (max-width: 992px) {
+  .navbar .navbar-collapse {
+    margin-top: 20px;
+  }
 }

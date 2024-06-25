@@ -1,55 +1,99 @@
-
-
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container nav-box my-2 py-3 mx-auto ">
-      <a routerLink="" mat-button class="navbar-item">
-        <span class="nav-brand"> <span class="exam-text">Exam</span>Pal </span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <div class="navbar-nav  left-navs d-flex ">
-
-          <a routerLink="how" mat-button class=" navbar-item active-nav">How it works?</a>
-          <a routerLink="quizes" mat-button class=" navbar-item">Quizes</a>
-          <a routerLink="aboutus" mat-button class=" navbar-item">About Us</a>
-          <a *ngIf="!(userLogin&&userDetails)else profile" routerLink="login" mat-button class=" navbar-item login-button">Login</a>
-          <ng-template #profile >
-            <div class =" navbar-item">
-            <img [src]="baseUrl+ (userDetails.profile||'default.png')" class="profile-navbar-pic">
-          <button mat-button   [matMenuTriggerFor]="menu"    class="  profile-button">
-            {{userDetails.firstName||"Shaikh"}}
-          </button>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container nav-box my-2 py-3 mx-auto">
+    <a routerLink="" mat-button class="navbar-item">
+      <span class="nav-brand"> <span class="exam-text">Exam</span>Pal </span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarSupportedContent"
+    >
+      <div class="navbar-nav left-navs d-flex">
+        <a routerLink="how" mat-button class="navbar-item active-nav"
+          >How it works?</a
+        >
+        <a routerLink="quizes" mat-button class="navbar-item">Quizes</a>
+        <a routerLink="aboutus" mat-button class="navbar-item">About Us</a>
+        <a
+          *ngIf="!(userLogin && userDetails); else profile"
+          routerLink="login"
+          mat-button
+          class="navbar-item login-button"
+          >Login</a
+        >
+        <ng-template #profile>
+          <div class="navbar-item">
+            <img
+              [src]="baseUrl + (userDetails.profile || 'default.png')"
+              class="profile-navbar-pic"
+            />
+            <button
+              mat-button
+              [matMenuTriggerFor]="menu"
+              class="profile-button"
+            >
+              {{ userDetails.firstName || "Shaikh" }}
+            </button>
           </div>
-        </ng-template>            
-        
+        </ng-template>
+
         <div>
-                  <mat-menu #menu="matMenu"  class="profile-drop-menu">
-                    <div>
+          <mat-menu #menu="matMenu" class="profile-drop-menu">
+            <div>
+              <div routerLink="{{ profilePath }}" mat-menu-item class="py-3">
+                <img
+                  [src]="baseUrl + 'default.png'"
+                  class="profile-navbar-pic"
+                />
+                Shaikh Shahzade
+              </div>
+              <button
+                mat-menu-item
+                *ngIf="userRoles?.indexOf('admin') != -1"
+                routerLink="/admin/profile"
+                class="text-center"
+              >
+                Admin Dashboard
+              </button>
+              <button
+                mat-menu-item
+                *ngIf="userRoles?.indexOf('normal-user') != -1"
+                routerLink="/user/dashboard"
+                class="text-center"
+              >
+                Dashboard
+              </button>
 
-          <div routerLink = {{profilePath}}  mat-menu-item class="py-3">
-            <img [src]="baseUrl+ ('default.png')" class="profile-navbar-pic">
-          Shaikh Shahzade</div>
-          <button mat-menu-item *ngIf="userRoles?.indexOf('admin')!=-1" routerLink="/admin/profile" class="text-center">Admin Dashboard</button>
-          <button mat-menu-item *ngIf="userRoles?.indexOf('normal-user')!=-1" routerLink="/user/dashboard" class="text-center">Dashboard</button>
-          
-          <button mat-menu-item routerLink="/user/profile">Profile</button>
-          <hr style="  border: 2px solid rgb(231, 229, 229); width: 99%; border-radius: 6%; margin: auto;" />
-          <button  (click)="logout()"  mat-menu-item  style="  border-radius: 2%;"><mat-icon>logout</mat-icon>Logout</button>
-
+              <button mat-menu-item routerLink="/user/profile">Profile</button>
+              <hr
+                style="
+                  border: 2px solid rgb(231, 229, 229);
+                  width: 99%;
+                  border-radius: 6%;
+                  margin: auto;
+                "
+              />
+              <button
+                (click)="logout()"
+                mat-menu-item
+                style="border-radius: 2%"
+              >
+                <mat-icon>logout</mat-icon>Logout
+              </button>
+            </div>
+          </mat-menu>
         </div>
-        </mat-menu>
-        </div>
-
-        
-</div>
- 
-
       </div>
-
     </div>
-    
-    
-  </nav>
-
+  </div>
+</nav>
