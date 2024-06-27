@@ -1,21 +1,22 @@
-<button type="button" class="btn  btn-primary"> 
-    <mat-icon style="line-height: inherit;">add</mat-icon> Add Users</button>
+<button type="button" class="btn btn-primary">
+  <mat-icon style="line-height: inherit">add</mat-icon> Add Users
+</button>
 
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Role</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users; index as i">
-        <th scope="row">{{i+1}}</th>
-        <td>{{user.firstName +" "+ user.lastName}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.userRole[0].role.role}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ user.firstName + " " + user.lastName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.userRole[0].role.role }}</td>
+    </tr>
+  </tbody>
+</table>

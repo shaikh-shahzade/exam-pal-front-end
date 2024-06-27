@@ -1,51 +1,111 @@
-<button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Toggle offcanvas</button>
- 
+<button
+  class="btn btn-primary d-lg-none"
+  type="button"
+  data-bs-toggle="offcanvas"
+  data-bs-target="#offcanvasResponsive"
+  aria-controls="offcanvasResponsive"
+>
+  Toggle offcanvas
+</button>
+
 <div class="container">
-    <div class="row  g-2">
-         
-        
-<div class="col-3 offcanvas-lg offcanvas-start " tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body my-left-canvas">
-    <div class="container  mx-3">
-        <div class="row  mt-3 justify-content-center align-items-center g-2">
-            <div class="col admin-col" >
-                <button mat-button routerLink="./profile" ><img [src]="baseUrl+'default.png'"><span>Admin</span></button></div>
+  <div class="row g-2">
+    <div
+      class="col-3 offcanvas-lg offcanvas-start"
+      tabindex="-1"
+      id="offcanvasResponsive"
+      aria-labelledby="offcanvasResponsiveLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">
+          Responsive offcanvas
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          data-bs-target="#offcanvasResponsive"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body my-left-canvas">
+        <div class="container mx-3">
+          <div class="row mt-3 justify-content-center align-items-center g-2">
+            <div class="col admin-col">
+              <button mat-button routerLink="./profile">
+                <img [src]="baseUrl + 'default.png'" /><span>Admin</span>
+              </button>
+            </div>
+          </div>
+          <div class="row justify-content-center align-items-center g-2">
+            <div class="col admin-line"><hr /></div>
+          </div>
+          <div class="row my-2 justify-content-center align-items-center g-2">
+            <div class="col">
+              <button
+                routerLink="./create"
+                routerLinkActive="active"
+                mat-button
+                class="side-nav-button-menu"
+              >
+                Create new Quizes
+              </button>
+            </div>
+          </div>
+          <div class="row my-2 justify-content-center align-items-center g-2">
+            <div class="col">
+              <button
+                routerLink="./users"
+                routerLinkActive="active"
+                mat-button
+                class="side-nav-button-menu"
+              >
+                Users
+              </button>
+            </div>
+          </div>
+          <div class="row my-2 justify-content-center align-items-center g-2">
+            <div class="col">
+              <button
+                routerLink="./quizes"
+                routerLinkActive="active"
+                mat-button
+                class="side-nav-button-menu"
+              >
+                Quizes
+              </button>
+            </div>
+          </div>
+          <div class="row my-2 justify-content-center align-items-center g-2">
+            <div class="col">
+              <button
+                routerLink="./assign"
+                routerLinkActive="active"
+                mat-button
+                class="side-nav-button-menu"
+              >
+                Assign exam
+              </button>
+            </div>
+          </div>
+          <div class="row my-2 justify-content-center align-items-center g-2">
+            <div class="col">
+              <button
+                routerLink="./results"
+                routerLinkActive="active"
+                mat-button
+                class="side-nav-button-menu"
+              >
+                Results
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="row  justify-content-center align-items-center g-2">
-            <div class="col admin-line"><hr></div>
-        </div>
-        <div class="row my-2  justify-content-center align-items-center g-2">
-            <div class="col"><button routerLink="./create" routerLinkActive="active" mat-button class="side-nav-button-menu" >Create new Quizes</button></div>
-        </div>
-        <div class="row my-2 justify-content-center align-items-center g-2">
-            <div class="col"><button routerLink="./users" routerLinkActive="active" mat-button class="side-nav-button-menu">Users</button></div>
-        </div>
-        <div class="row my-2 justify-content-center align-items-center g-2">
-            <div class="col"><button routerLink="./quizes" routerLinkActive="active" mat-button class="side-nav-button-menu">Quizes</button></div>
-        </div>
-        <div class="row my-2 justify-content-center align-items-center g-2">
-            <div class="col"><button routerLink="./assign" routerLinkActive="active" mat-button class="side-nav-button-menu">Assign exam</button></div>
-        </div>
-        <div class="row my-2 justify-content-center align-items-center g-2">
-            <div class="col"><button routerLink="./results" routerLinkActive="active" mat-button class="side-nav-button-menu">Results</button></div>
-        </div>
-    </div>    
-
-
-</div>
-</div>
-
-       
-        
-        <div class="col">
-
-            <router-outlet></router-outlet>
-
-        </div>
-        
+      </div>
     </div>
+
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
