@@ -12,8 +12,6 @@ export class StartPageComponent {
 constructor(private solveService:SolveService){}
 
 startQuiz(quizId:number)
-{
-  
-}
+{}
 
 }

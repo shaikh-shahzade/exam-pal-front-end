@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Result } from '../model/result.model';
 import { QuizAttempt } from '../model/quiz-attempt.model';
 import { ApiUtilityService } from '../services/api-utility/api-utility.service';
+import { ActiveQuizService } from '../services/active-quiz/active-quiz.service';
 
 @Component({
   selector: 'app-quiz-details',
@@ -20,21 +21,18 @@ export class QuizDetailsComponent implements AfterViewInit{
 q: any;
   constructor(private quizService:QuizService,
      private router:Router,
-     private apiUtil:ApiUtilityService
+     private apiUtil:ApiUtilityService,
+     private activeQuizService:ActiveQuizService
     )
   {}
   ngAfterViewInit(): void {
-    this.quizId=this.router.routerState.snapshot.root.queryParamMap.get("id");
     
-    if(this.quizId)
+    if(this.activeQuizService.quiz!==null)
       {
-        this.quizService.getQuizById(this.quizId).subscribe((val)=>{
-          this.quiz=val;
-        })
-        this.quizAttempts = this.apiUtil.getAttemptsByQuiz(this.quizId)
-
-        
+        this.quiz=this.activeQuizService.quiz;
+        this.quizAttempts = this.apiUtil.getAttemptsByQuiz(`${this.quiz.qid}`)
       }
+
   }
   
 }
