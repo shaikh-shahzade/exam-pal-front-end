@@ -13,7 +13,7 @@ import { ActiveQuizService } from '../services/active-quiz/active-quiz.service';
   templateUrl: './quiz-details.component.html',
   styleUrls: ['./quiz-details.component.css']
 })
-export class QuizDetailsComponent implements AfterViewInit{
+export class QuizDetailsComponent implements AfterViewInit , OnInit{
 
   quizId:string|null;
   quiz:Quiz;
@@ -25,13 +25,16 @@ q: any;
      private activeQuizService:ActiveQuizService
     )
   {}
-  ngAfterViewInit(): void {
-    
+  ngOnInit(): void {
     if(this.activeQuizService.quiz!==null)
       {
         this.quiz=this.activeQuizService.quiz;
         this.quizAttempts = this.apiUtil.getAttemptsByQuiz(`${this.quiz.qid}`)
       }
+  }
+  ngAfterViewInit(): void {
+    
+    
 
   }
   
