@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { interval } from 'rxjs';
 import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
@@ -11,7 +11,7 @@ import { ApiUtilityService } from 'src/app/services/api-utility/api-utility.serv
   templateUrl: './quiz-result.component.html',
   styleUrls: ['./quiz-result.component.css'],
 })
-export class QuizResultComponent implements AfterViewInit {
+export class QuizResultComponent implements AfterViewInit, OnInit {
   result: Result;
   attempt: QuizAttempt;
   passingScore: Number;
@@ -22,7 +22,8 @@ export class QuizResultComponent implements AfterViewInit {
     private route: ActivatedRoute,
     private apiUtility: ApiUtilityService
   ) {}
-  ngAfterViewInit(): void {
+  ngAfterViewInit(): void {}
+  ngOnInit(): void {
     const attemptID = this.route.snapshot.paramMap.get('id');
     if (attemptID != null)
       this.apiUtility.getAttempt(attemptID).subscribe((att) => {
