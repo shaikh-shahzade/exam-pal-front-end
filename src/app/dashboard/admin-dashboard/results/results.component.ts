@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { QuizAttempt } from 'src/app/model/quiz-attempt.model';
 import { ApiUtilityService } from 'src/app/services/api-utility/api-utility.service';
 
@@ -7,12 +7,17 @@ import { ApiUtilityService } from 'src/app/services/api-utility/api-utility.serv
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css']
 })
-export class ResultsComponent implements AfterViewInit{
+export class ResultsComponent implements OnInit{
   quizAttempts:QuizAttempt[];
   constructor(private apiService:ApiUtilityService)
   {}
+  ngOnInit(): void {
+    this.apiService.getAttemptsByHost().subscribe(val=>{
+      this.quizAttempts=val
+    });
+  }
   ngAfterViewInit(): void {
-    this.apiService.getAttemptsByHost().subscribe(val=>console.log(val));
+    
 
 
   }

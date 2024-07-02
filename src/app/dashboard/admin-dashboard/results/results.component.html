@@ -4,6 +4,7 @@
       <th scope="col">#</th>
       <th scope="col">Title</th>
       <th scope="col">User</th>
+      <th scope="col">Date</th>
       <th scope="col">Status</th>
     </tr>
   </thead>
@@ -11,8 +12,9 @@
     <tr *ngFor="let attempt of quizAttempts; index as i">
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ attempt.quiz.title }}</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>{{attempt.result.marks}}</td>
+      <td>{{attempt.date}}</td>
+      <td>{{attempt.status}}</td>
     </tr>
   </tbody>
 </table>
