@@ -6,15 +6,17 @@
       <th scope="col">User</th>
       <th scope="col">Date</th>
       <th scope="col">Status</th>
+      <th scope="col">Result</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
-    <tr *ngFor="let attempt of quizAttempts; index as i">
+    <tr *ngFor="let attempt of quizAttempts; index as i" class="">
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ attempt.quiz.title }}</td>
       <td>{{attempt.result.marks}}</td>
       <td>{{attempt.date}}</td>
       <td>{{attempt.status}}</td>
+      <td> <button  class="result-button" mat-button routerLink="/quiz/result/{{attempt.id}}" [relativeTo]=""><mat-icon>wysiwyg</mat-icon></button></td>
     </tr>
   </tbody>
 </table>
