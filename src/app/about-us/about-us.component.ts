@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-us.component.css']
 })
 export class AboutUsComponent {
-   constructor() {}
+  experince:number
+   constructor() {
+    let date = new Date( Date.now()).getFullYear()  - new Date( "01/01/2022") .getFullYear();
+    
+    
+    this.experince =  date;
+   }
 }
