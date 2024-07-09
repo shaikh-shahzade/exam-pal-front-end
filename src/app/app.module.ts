@@ -59,6 +59,7 @@ import { EditQuizComponent } from './dashboard/admin-dashboard/manage-quizes/edi
 import { QuizAttemptTableComponent } from './dashboard/quiz-attempt/quiz-attempt-table/quiz-attempt-table.component';
 import { QuizResultComponent } from './dashboard/quiz-attempt/quiz-result/quiz-result.component';
 import { QuestionReviewsComponent } from './dashboard/quiz-attempt/quiz-result/question-reviews/question-reviews.component';
+import { TempHandlerComponent } from './temp-handler/temp-handler.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,7 +90,8 @@ import { QuestionReviewsComponent } from './dashboard/quiz-attempt/quiz-result/q
     EditQuizComponent,
     QuizAttemptTableComponent,
     QuizResultComponent,
-    QuestionReviewsComponent
+    QuestionReviewsComponent,
+    TempHandlerComponent
     
   ],
   imports: [
