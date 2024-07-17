@@ -4,17 +4,13 @@ import { Quiz } from '../model/quiz.model';
 @Component({
   selector: 'app-quiz-card',
   templateUrl: './quiz-card.component.html',
-  styleUrls: ['./quiz-card.component.css']
+  styleUrls: ['./quiz-card.component.css'],
 })
 export class QuizCardComponent {
-
-  @Input() quiz:Quiz;
+  @Input() quiz: Quiz;
   @Output() startQuiz = new EventEmitter<Quiz>();
 
-  start()
-  {
+  start() {
     this.startQuiz.emit(this.quiz);
   }
-  
-
 }
