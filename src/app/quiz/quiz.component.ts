@@ -46,7 +46,6 @@ export class QuizComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       console.log(val);
     });
-    this.dataSource.paginator = this.paginator;
   }
 
   ngAfterViewInit() {}

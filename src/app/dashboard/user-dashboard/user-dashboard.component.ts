@@ -7,25 +7,22 @@ import { QuizService } from 'src/app/services/quiz/quiz.service';
 @Component({
   selector: 'app-user-dashboard',
   templateUrl: './user-dashboard.component.html',
-  styleUrls: ['./user-dashboard.component.css']
+  styleUrls: ['./user-dashboard.component.css'],
 })
 export class UserDashboardComponent {
-
-  quizes:Quiz[];
-  constructor(private quizService:QuizService, private router:Router,private activeQuiz:ActiveQuizService)
-  {
-
-  }
-ngOnInit()
-{
-    this.quizService.retrieveQuizes().subscribe((val)=>{
-      this.quizes=val;
+  quizes: Quiz[];
+  constructor(
+    private quizService: QuizService,
+    private router: Router,
+    private activeQuiz: ActiveQuizService
+  ) {}
+  ngOnInit() {
+    this.quizService.retrieveQuizes().subscribe((val) => {
+      this.quizes = val;
     });
-}
-quizstart(val: Quiz) {
-  
-  this.activeQuiz.quiz=val;
-  this.router.navigate(['quiz/details'])
-}
-
+  }
+  quizstart(val: Quiz) {
+    this.activeQuiz.quiz = val;
+    this.router.navigate(['quiz/details']);
+  }
 }
