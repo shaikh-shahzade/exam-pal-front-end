@@ -1,70 +1,87 @@
-
-
-<div class="  login-body">
-<div class="container card-body-login mx-5 my-4 ">
-           
+<div class="login-body">
+  <div class="container card-body-login mx-5 my-4">
     <mat-card class="card">
-        <mat-card-content>
-            
-            <form (ngSubmit)="submitLogin()" >
-                <div class="row justify-content-center text-center">
-                    <h1 class="exam-pal-heading">Exam<span style="color:var(--main-red-color);">Pal</span></h1>
-                </div>
-                <div class="row text-pt1 justify-content-center text-center ">
-                    <span >Welcome  back! <br>Please login/Signup to your account.
-                       </span>
-                </div>
+      <mat-card-content>
+        <form (ngSubmit)="submitLogin()">
+          <div class="row justify-content-center text-center">
+            <h1 class="exam-pal-heading">
+              Exam<span style="color: var(--main-red-color)">Pal</span>
+            </h1>
+          </div>
+          <div class="row text-pt1 justify-content-center text-center">
+            <span
+              >Welcome back! <br />Please login/Signup to your account.
+            </span>
+          </div>
 
-          
-                <div class="row justify-content-center align-items-center g-2">
-     
-                <mat-form-field appearance="outline" class="email-field">
-                    <mat-label>Enter username</mat-label>
-                    <input [(ngModel)]="loginDetails.username" 
-                    name="username"  matInput 
-                    required minlength="5"
-                    placeholder="Username" #usernameRef="ngModel" >
-                    <mat-icon matSuffix style="color:var(--main-red-color);">person</mat-icon>
-                    <mat-hint *ngIf="!usernameRef.valid && usernameRef.touched " style="color:var(--main-red-color);">Invalid username</mat-hint>
-                  </mat-form-field>
-                  </div>
+          <div class="row justify-content-center align-items-center g-2">
+            <mat-form-field appearance="outline" class="email-field">
+              <mat-label>Enter username</mat-label>
+              <input
+                [(ngModel)]="loginDetails.username"
+                name="username"
+                matInput
+                required
+                minlength="5"
+                placeholder="Username"
+                #usernameRef="ngModel"
+              />
+              <mat-icon matSuffix style="color: var(--main-red-color)"
+                >person</mat-icon
+              >
+              <mat-hint
+                *ngIf="!usernameRef.valid && usernameRef.touched"
+                style="color: var(--main-red-color)"
+                >Invalid username</mat-hint
+              >
+            </mat-form-field>
+          </div>
 
-                  <div class="row justify-content-center align-items-center g-2">
-     
-                  <mat-form-field appearance="outline">
-                    <mat-label>Enter Password</mat-label>
-                    <input [(ngModel)] = "loginDetails.password" 
-                    name="password"
-                     matInput
-                     required minlength="5" placeholder="Password..." #passwordRef="ngModel">
-                    <!-- <mat-icon matSuffix>password</mat-icon> -->
-                    <mat-hint *ngIf="!passwordRef.valid && passwordRef.touched" style="color:var(--main-red-color);">Invalid password</mat-hint>
-                  </mat-form-field>
-                  </div>
+          <div class="row justify-content-center align-items-center g-2">
+            <mat-form-field appearance="outline">
+              <mat-label>Enter Password</mat-label>
+              <input
+                [(ngModel)]="loginDetails.password"
+                name="password"
+                matInput
+                required
+                minlength="5"
+                placeholder="Password..."
+                #passwordRef="ngModel"
+              />
+              <!-- <mat-icon matSuffix>password</mat-icon> -->
+              <mat-hint
+                *ngIf="!passwordRef.valid && passwordRef.touched"
+                style="color: var(--main-red-color)"
+                >Invalid password</mat-hint
+              >
+            </mat-form-field>
+          </div>
 
-                  <div class="row justify-content-start py-2 align-items-center g-2">
-                    <div class="col-4      ">
-                        <button type="submit" mat-stroked-button class="login-button"> Login </button>
-                  
-                    </div>
-                    <div class="col-4      ">
-                        <button type="button"  routerLink="/signup" mat-stroked-button class=" login-button signup-redirect-button"> Signup </button>
-                  
-                    </div>
-                  </div>
-
-            </form>
-            <div class="row justify-content-center align-items-center g-2">
-     
-                <a href="#" class="login-forgot-password"> Forgot password? </a>
-                </div>
-
-        </mat-card-content>
+          <div class="row justify-content-start py-2 align-items-center g-2">
+            <div class="col-4">
+              <button type="submit" mat-stroked-button class="login-button">
+                Login
+              </button>
+            </div>
+            <div class="col-4">
+              <button
+                type="button"
+                routerLink="/signup"
+                mat-stroked-button
+                class="login-button signup-redirect-button"
+              >
+                Signup
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="row justify-content-center align-items-center g-2">
+          <a href="#" class="login-forgot-password"> Forgot password? </a>
+        </div>
+      </mat-card-content>
     </mat-card>
+  </div>
 
-
-</div>
-
-<div class="right-image"
-></div>
+  <div class="right-image"></div>
 </div>
