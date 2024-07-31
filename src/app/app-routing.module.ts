@@ -15,7 +15,7 @@ import { AssignExamsComponent } from './dashboard/admin-dashboard/assign-exams/a
 import { ResultsComponent } from './dashboard/admin-dashboard/results/results.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HowToComponent } from './how-to/how-to.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
+import { ErrorPageComponent } from './commons/error-page/error-page.component';
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
 import { QuizAttemptComponent } from './dashboard/quiz-attempt/quiz-attempt.component';
