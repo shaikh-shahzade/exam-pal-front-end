@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { Quiz } from '../model/quiz.model';
-import { QuizService } from '../services/quiz/quiz.service';
+import { Quiz } from '../../model/quiz.model';
+import { QuizService } from '../../services/quiz/quiz.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Result } from '../model/result.model';
-import { QuizAttempt } from '../model/quiz-attempt.model';
-import { ApiUtilityService } from '../services/api-utility/api-utility.service';
-import { ActiveQuizService } from '../services/active-quiz/active-quiz.service';
+import { Result } from '../../model/result.model';
+import { QuizAttempt } from '../../model/quiz-attempt.model';
+import { ApiUtilityService } from '../../services/api-utility/api-utility.service';
+import { ActiveQuizService } from '../../services/active-quiz/active-quiz.service';
 
 @Component({
   selector: 'app-quiz-details',

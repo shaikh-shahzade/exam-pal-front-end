@@ -17,7 +17,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { HowToComponent } from './how-to/how-to.component';
 import { ErrorPageComponent } from './commons/error-page/error-page.component';
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
-import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
+import { QuizDetailsComponent } from './commons/quiz-details/quiz-details.component';
 import { QuizAttemptComponent } from './dashboard/quiz-attempt/quiz-attempt.component';
 import { StartPageComponent } from './dashboard/quiz-attempt/start-page/start-page.component';
 import { SolveQuizComponent } from './dashboard/quiz-attempt/solve-quiz/solve-quiz.component';

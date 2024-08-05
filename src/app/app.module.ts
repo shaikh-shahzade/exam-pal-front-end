@@ -48,7 +48,7 @@ import { HowToComponent } from './how-to/how-to.component';
 import { ErrorPageComponent } from './commons/error-page/error-page.component';
 import { UserProfileComponent } from './dashboard/user-dashboard/user-profile/user-profile.component';
 import { QuizCardComponent } from './commons/quiz-card/quiz-card.component';
-import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
+import { QuizDetailsComponent } from './commons/quiz-details/quiz-details.component';
 import { QuizAttemptComponent } from './dashboard/quiz-attempt/quiz-attempt.component';
 import { StartPageComponent } from './dashboard/quiz-attempt/start-page/start-page.component';
 import { SolveQuizComponent } from './dashboard/quiz-attempt/solve-quiz/solve-quiz.component';
@@ -59,7 +59,7 @@ import { EditQuizComponent } from './dashboard/admin-dashboard/manage-quizes/edi
 import { QuizAttemptTableComponent } from './dashboard/quiz-attempt/quiz-attempt-table/quiz-attempt-table.component';
 import { QuizResultComponent } from './dashboard/quiz-attempt/quiz-result/quiz-result.component';
 import { QuestionReviewsComponent } from './dashboard/quiz-attempt/quiz-result/question-reviews/question-reviews.component';
-import { TempHandlerComponent } from './temp-handler/temp-handler.component';
+import { TempHandlerComponent } from './commons/temp-handler/temp-handler.component';
 @NgModule({
   declarations: [
     AppComponent,
