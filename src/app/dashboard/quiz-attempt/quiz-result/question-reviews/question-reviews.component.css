@@ -1,9 +1,7 @@
-.list-group-item
-{
-    max-height: 40px;
+.list-group-item {
+  max-height: 40px;
 }
-.list-group .active
-{
-    background: rgb(1, 171, 1);
-    border: none;
+.list-group .active {
+  background: rgb(1, 171, 1);
+  border: none;
 }
