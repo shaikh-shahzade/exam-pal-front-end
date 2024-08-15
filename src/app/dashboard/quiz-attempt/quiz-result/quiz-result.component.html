@@ -80,14 +80,20 @@
     <div class="col col-12 col-lg-8 mb-5">
       <div class="collapse" id="reviewQuiz">
         <div #reviewQuizArea class="card card-body">
-          <app-question-reviews
-            *ngFor="
-              let attemptedQuestion of attempt.result.attemptedQuestion;
-              index as i
+          <div
+            *ngIf="
+              attempt && attempt.result && attempt.result.attemptedQuestion
             "
-            [attemptedAquestion]="attemptedQuestion"
-            [index]="i"
-          ></app-question-reviews>
+          >
+            <app-question-reviews
+              *ngFor="
+                let attemptedQuestion of attempt.result.attemptedQuestion;
+                index as i
+              "
+              [attemptedAquestion]="attemptedQuestion"
+              [index]="i"
+            ></app-question-reviews>
+          </div>
         </div>
       </div>
     </div>
