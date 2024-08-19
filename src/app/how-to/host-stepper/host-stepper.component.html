@@ -1,0 +1,33 @@
+<h1 class="head">Host</h1>
+      <mat-stepper orientation="vertical" #stepper>
+        <mat-step>
+          <ng-template matStepLabel>Start</ng-template>
+          <mat-label> Create an Host account. </mat-label>
+
+          <button mat-button matStepperNext>Next</button>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Create a new Quiz</ng-template>
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Add/Manage/Assign Quiz</ng-template>
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <p>Thanks for visiting!</p>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="this.stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+      </mat-stepper>
