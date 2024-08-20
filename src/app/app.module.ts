@@ -60,6 +60,8 @@ import { QuizAttemptTableComponent } from './dashboard/quiz-attempt/quiz-attempt
 import { QuizResultComponent } from './dashboard/quiz-attempt/quiz-result/quiz-result.component';
 import { QuestionReviewsComponent } from './dashboard/quiz-attempt/quiz-result/question-reviews/question-reviews.component';
 import { TempHandlerComponent } from './commons/temp-handler/temp-handler.component';
+import { HostStepperComponent } from './how-to/host-stepper/host-stepper.component';
+import { UserStepperComponent } from './how-to/user-stepper/user-stepper.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,7 +93,9 @@ import { TempHandlerComponent } from './commons/temp-handler/temp-handler.compon
     QuizAttemptTableComponent,
     QuizResultComponent,
     QuestionReviewsComponent,
-    TempHandlerComponent
+    TempHandlerComponent,
+    HostStepperComponent,
+    UserStepperComponent
     
   ],
   imports: [
