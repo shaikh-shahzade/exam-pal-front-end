@@ -3,73 +3,10 @@
     class="row py-5 d-flex row justify-content-evenly align-items-center g-2"
   >
     <div class="col-8 col-md-3">
-      <h1 class="head">Host</h1>
-      <mat-stepper orientation="vertical" #stepper>
-        <mat-step>
-          <ng-template matStepLabel>Start</ng-template>
-          <mat-label> Create an Host account. </mat-label>
-
-          <button mat-button matStepperNext>Next</button>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Create a new Quiz</ng-template>
-
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Add/Manage/Assign Quiz</ng-template>
-
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Done</ng-template>
-          <p>Thanks for visiting!</p>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
-          </div>
-        </mat-step>
-      </mat-stepper>
+      <app-host-stepper></app-host-stepper>
     </div>
     <div class="col-8 col-md-3">
-      <h1 class="head">User</h1>
-      <mat-stepper orientation="vertical" #stepper>
-        <mat-step>
-          <ng-template matStepLabel>Done</ng-template>
-          <mat-label>Create a user account </mat-label>
-          <button mat-button matStepperNext>Next</button>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Find/search Quizes</ng-template>
-
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Start and submit quiz</ng-template>
-          Check results for all your attempted quizes
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Done</ng-template>
-          <p>Thanks for visiting!</p>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
-          </div>
-        </mat-step>
-      </mat-stepper>
+      <app-user-stepper></app-user-stepper>
     </div>
   </div>
 </div>
