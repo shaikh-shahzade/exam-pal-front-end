@@ -1,32 +1,44 @@
-<h1 class="head">User</h1>
-      <mat-stepper orientation="vertical" #stepper>
-        <mat-step>
-          <ng-template matStepLabel>Done</ng-template>
-          <mat-label>Create a user account </mat-label>
-          <button mat-button matStepperNext>Next</button>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Find/search Quizes</ng-template>
+<div class="how-it-works-section">
+  <h2 class="section-heading">📘 How It Works for Quiz Users</h2>
 
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Start and submit quiz</ng-template>
-          Check results for all your attempted quizes
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Done</ng-template>
-          <p>Thanks for visiting!</p>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="this.stepper.reset()">Reset</button>
-          </div>
-        </mat-step>
-      </mat-stepper>
+  <mat-stepper orientation="vertical" #userStepper class="custom-stepper">
+    <mat-step label="Register / Login">
+      <p>Create your account or sign in to get started.</p>
+      <div class="step-actions">
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step label="Dashboard">
+      <p>View assigned quizzes, track progress, and upcoming tasks.</p>
+      <div class="step-actions">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step label="Take Quiz">
+      <p>Attempt quizzes with a timer and auto-save enabled.</p>
+      <div class="step-actions">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step label="Get Results">
+      <p>View instant scores, leaderboards, and performance charts.</p>
+      <div class="step-actions">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step label="Practice with AI">
+      <p>Generate custom practice questions and get instant feedback.</p>
+      <div class="step-actions">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="accent" (click)="userStepper.reset()">Finish</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

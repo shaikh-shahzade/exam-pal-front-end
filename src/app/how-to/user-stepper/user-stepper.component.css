@@ -1,0 +1,40 @@
+/* Shared wrapper for both steppers */
+.how-it-works-section {
+  margin: 40px auto;
+  max-width: 650px;
+  background: #fff;
+  padding: 30px; 
+}
+
+/* Headings */
+.section-heading {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
+}
+
+/* Stepper itself */
+.custom-stepper {
+  background: transparent;
+  padding: 0;                 /* ✅ remove extra stepper padding */
+}
+
+/* Step content */
+mat-step p {
+  margin: 12px 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Buttons inside steps */
+.step-actions {
+  margin-top: 15px;
+}
+
+.step-actions button {
+  margin-right: 10px;
+}

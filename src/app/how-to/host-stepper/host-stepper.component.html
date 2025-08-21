@@ -1,33 +1,36 @@
-<h1 class="head">Host</h1>
-      <mat-stepper orientation="vertical" #stepper>
-        <mat-step>
-          <ng-template matStepLabel>Start</ng-template>
-          <mat-label> Create an Host account. </mat-label>
+<div class="how-it-works-section">
+  <h2 class="section-heading">🚀 How It Works for Quiz Hosts</h2>
 
-          <button mat-button matStepperNext>Next</button>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Create a new Quiz</ng-template>
+  <mat-stepper orientation="vertical" #hostStepper class="custom-stepper">
+    <mat-step label="Login / Register">
+      <p>Admins create an account and log in securely.</p>
+      <div class="step-actions">
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
 
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Add/Manage/Assign Quiz</ng-template>
+    <mat-step label="Create Quiz">
+      <p>Design quizzes, add questions, and set timers.</p>
+      <div class="step-actions">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
 
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Done</ng-template>
-          <p>Thanks for visiting!</p>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="this.stepper.reset()">Reset</button>
-          </div>
-        </mat-step>
-      </mat-stepper>
+    <mat-step label="Assign Quiz">
+      <p>Assign quizzes to students or groups with one click.</p>
+      <div class="step-actions">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step label="Monitor Results">
+      <p>Track results, progress, and AI logs in real-time.</p>
+      <div class="step-actions">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" (click)="hostStepper.reset()">Finish</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
